@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>flexibility</title>
    <link rel="icon" href="favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
   body {
     margin: 0;
@@ -85,6 +87,50 @@
             text-decoration: none;
             color: inherit;
         }
+  
+  .container {
+    text-align: center;
+}
+
+.logo img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.button i {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.button p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -96,9 +142,36 @@
 
 <div class="welcome">
   <h1 style="font-size: 3em;">Welcome to Flexibility Workspace Chat</h1>
+  
+    <div class="container">
+        <div class="logo">
+              <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+ 
+    </div>
   <img src="g.webp" alt="Image G" style="width: 300px; height: auto;">
   <img src="g.png" alt="Image V" style="width: 300px; height: auto;">
 </div>
+  
+        <div class="button-container">
+            <div class="button">
+                <i class="fas fa-plane" style="color: #f4c20d;"></i>
+                <p>Experience Seoul like a local</p>
+            </div>
+            <div class="button">
+                <i class="fas fa-wrench" style="color: #db4437;"></i>
+                <p>Email for plumber quote</p>
+            </div>
+            <div class="button">
+                <i class="fas fa-code" style="color: #0f9d58;"></i>
+                <p>Python script for daily email reports</p>
+            </div>
+            <div class="button">
+                <i class="fas fa-lightbulb" style="color: #fbbc05;"></i>
+                <p>Morning routine for productivity</p>
+            </div>
+        </div>
     <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/mzdvw_euKlk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -148,6 +221,12 @@
 <a href="https://discord.com/channels/1193923300255088640/1237696492555206677">
     <div class="box box5" style="background-image: url('g.webp')">
         <div class="box-content">GPT-4 Turbo</div>
+    </div>
+</a>
+  
+  <a href="https://discord.com/channels/1193923300255088640/1237696492555206677">
+    <div class="box box5" style="background-image: url('llama.png')">
+        <div class="box-content">Llama-3</div>
     </div>
 </a>
   

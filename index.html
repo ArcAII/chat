@@ -183,56 +183,135 @@
 
 <div class="section">
   <h1>Get Started</h1>
-<a href="https://discord.com/channels/1193923300255088640/1227262797273108531">
-    <div class="box box1" style="background-image: url('a.webp')">
-        <div class="box-content">GPT-4</div>
-    </div>
-</a>
-<a href="https://discord.com/channels/1193923300255088640/1227891196693581847">
-    <div class="box box2" style="background-image: url('2.png')">
-        <div class="box-content">Claude 3</div>
-    </div>
-</a>
-<a href="https://hf.co/chat/assistant/663f5025924f92c1a01ca177">
-    <div class="box box3" style="background-image: url('3.png')">
-        <div class="box-content">Hugging face</div>
-    </div>
-</a>
-<a href="https://discord.com/channels/1193923300255088640/1237696492555206677">
-    <div class="box box4" style="background-image: url('4.png')">
-        <div class="box-content">GPT-3.5 Turbo</div>
-    </div>
-</a>
-<a href="https://discord.com/channels/1193923300255088640/1227262797273108531">
-    <div class="box box5" style="background-image: url('5.png')">
-        <div class="box-content">ChatGPT</div>
-    </div>
-</a>
-<a href="https://discord.com/channels/1193923300255088640/1240337591434477630">
-    <div class="box box5" style="background-image: url('g.png')">
-        <div class="box-content">GPT-4o</div>
-    </div>
-</a>
-<a href="https://discord.com/channels/1193923300255088640/1237696492555206677">
-    <div class="box box5" style="background-image: url('logo.png')">
-        <div class="box-content">flexibility</div>
-    </div>
-</a>
-<a href="https://discord.com/channels/1193923300255088640/1237696492555206677">
-    <div class="box box5" style="background-image: url('g.webp')">
-        <div class="box-content">GPT-4 Turbo</div>
-    </div>
-</a>
-  
-  <a href="https://discord.com/channels/1193923300255088640/1237696492555206677">
-    <div class="box box5" style="background-image: url('llama.png')">
-        <div class="box-content">Llama-3</div>
-    </div>
-</a>
-  
-  
-  
+  <style>
+ .main {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+        justify-content: center; /* Center the cards */
+    }
+    .card {
+        flex-basis: calc(100% - 1rem); /* Adjust the width of the cards for mobile */
+        max-width: 280px; /* Set a maximum width for larger screens */
+        height: 400px; /* Increase the height for mobile */
+        margin: 0.5rem;
+        background-color: #333; /* Darker background for cards */
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow for cards if needed */
+        color: #eee; /* Light color for card text */
+        position: relative; /* Required for image positioning */
+        overflow: hidden; /* Ensure content does not overflow */
+    }
+    .card img {
+        width: 100%;
+        height: 100%; /* Ensure image covers the entire card */
+        object-fit: cover; /* Ensures image fills the card container */
+        position: absolute; /* Position image inside the card */
+        top: 0;
+        left: 0;
+    }
+    .card-content {
+        position: absolute; /* Position text on top of the image */
+        bottom: 0; /* Align text to the bottom of the card */
+        left: 0; /* Align text to the left of the card */
+        right: 0; /* Stretch to the right */
+        padding: 1rem; /* Add padding */
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for text */
+        color: #fff; /* Ensure text is readable */
+    }
+    .card h3 {
+        font-size: 1rem;
+        margin: 0; /* Remove margin for better alignment */
+    }
+    .card p {
+        font-size: 0.8rem;
+        margin: 0.5rem 0 0; /* Add some margin for spacing */
+    }
 
+    /* Media query for desktop view */
+    @media (min-width: 1024px) {
+        .main {
+            justify-content: flex-start; /* Align cards to the start for desktop */
+        }
+        .card {
+            flex-basis: calc(25% - 1rem); /* Adjust width for desktop */
+            max-width: 220px; /* Set a maximum width for desktop */
+            height: 300px; /* Increase the height for desktop */
+        }
+    }
+</style>
+</head>
+<body>
+<header class="header">
+    
+    <span>ChatGPT</span>
+</header>
+
+<main class="main">
+    <a href="https://discord.com/channels/1193923300255088640/1240337591434477630" class="card">
+        <img src="g.png" alt="Card 1 Image">
+        <div class="card-content">
+            <h3>Let your imagination run wild</h3>
+            <p>A large language model GPT-4 developed by OpenAI</p>
+        </div>
+    </a>
+    <a href="https://discord.com/channels/1193923300255088640/1227891196693581847" class="card">
+        <img src="image2.jpg" alt="Card 2 Image">
+        <div class="card-content">
+            <h3>Claude 3</h3>
+            <p>Explore different research topics with Claude 3 sonnet</p>
+        </div>
+    </a>
+    <a href="https://hf.co/chat/assistant/663f5025924f92c1a01ca177" class="card">
+        <img src="image3.jpg" alt="Card 3 Image">
+        <div class="card-content">
+            <h3>Hugging face</h3>
+            <p>Solutions for looking to leverage Huggingface model</p>
+        </div>
+    </a>
+    <a href="https://discord.com/channels/1193923300255088640/1236285470292312125" class="card">
+        <img src="logo.png" alt="Card 4 Image">
+        <div class="card-content">
+            <h3>Flexibility</h3>
+            <p>Learn how flexibility our own model can assist in education</p>
+        </div>
+    </a>
+    <a href="https://discord.com/channels/1193923300255088640/1227262797273108531" class="card">
+        <img src="image5.jpg" alt="Card 5 Image">
+        <div class="card-content">
+            <h3>ChatGPT</h3>
+            <p>ChatGPT applications in the GPT-3 model</p>
+        </div>
+    </a>
+    <a href="https://discord.com/channels/1193923300255088640/1237696492555206677" class="card">
+        <img src="g.webp" alt="Card 6 Image">
+        <div class="card-content">
+            <h3>GPT-4 Turbo</h3>
+            <p>Using ChatGPT for productivity purposes</p>
+        </div>
+    </a>
+    <a href="https://discord.com/channels/1193923300255088640/1237696492555206677" class="card">
+        <img src="llama.png" alt="Card 7 Image">
+        <div class="card-content">
+            <h3>Llama 2</h3>
+            <p>Tech advancements driven by Meta</p>
+        </div>
+    </a>
+    <a href="https://discord.com/channels/1193923300255088640/1241349044668731493" class="card">
+        <img src="cook.jpg" alt="Card 8 Image">
+        <div class="card-content">
+            <h3>Luna</h3>
+            <p>ChatGPT for writing purposes and grammar</p>
+        </div>
+      <a href="https://discord.com/channels/1193923300255088640/1193924931625418862" class="card">
+        <img src="us.webp" alt="Card 8 Image">
+        <div class="card-content">
+            <h3>GPT-4</h3>
+            <p>GPT-4 is good in productivity and the base model of OpenAI</p>
+        </div>
+    
+</main>
 <div class="section">
   <h1>What is New</h1>
   <div class="box box6" style="background-image: url('6.png')">

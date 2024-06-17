@@ -270,23 +270,27 @@
         
         /* Styles for chat container */
        /* Styles for chat container */
-.chat-container {
-    display: none;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex: 1;
-    background-color: #010103;
-    padding: 10px;
-    border-radius: 15px;
-    margin-top: 20px;
-    overflow-y: auto;
-    height: calc(100vh - 200px); /* Adjust this value as needed */
-    width: 80%; /* Adjust width as needed */
-}
+       .chat-container {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex: 1;
+        background-color: #010103;
+        padding: 10px;
+        border-radius: 15px;
+        margin-top: 20px;
+        overflow-y: auto;
+        height: calc(100vh - 200px); /* Adjust this value as needed */
+        position: absolute; /* Position absolute to cover the extreme right */
+        right: 0; /* Align it to the extreme right */
+        width: 70%; /* Adjust the width as needed */
+    }
+    .chat-container.active {
+        display: flex;
+    }
+    
 
-.chat-container.active {
-    display: flex;
-}
+
 
         
         .message {

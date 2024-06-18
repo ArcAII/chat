@@ -61,107 +61,6 @@
             height: 100vh;
         }
         
-        .sidebar {
-            width: 250px; /* Adjust width as needed */
-            background-color: #000000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .sidebar-logo {
-            width: 80px; /* Adjust size as needed */
-            height: auto;
-            margin-bottom: 20px;
-        }
-        
-        .sidebar .new-thread {
-            background-color: #444;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        
-        .sidebar .menu-btn {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        
-        .sidebar .try-pro {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        
-        .sidebar .try-pro .logo {
-            width: 50px; /* Adjust size as needed */
-            height: auto;
-            margin-bottom: 10px;
-        }
-        
-        .sidebar .try-pro .sun-icon {
-            width: 30px; /* Adjust size as needed */
-            height: auto;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        
-        .sidebar .try-pro .discover-btn,
-        .sidebar .try-pro .dark-mode-btn {
-            background-color: #555;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        
-        .sidebar .user-section {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .sidebar .user-section .user-icon {
-            width: 40px;
-            height: 40px;
-            background-color: #ff6347;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-        }
-        
-        .sidebar .download-btn,
-        .sidebar .upgrade-btn {
-            background-color: #444;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        
         
         
         .main-content {
@@ -172,6 +71,7 @@
             padding: 10px;
             position: relative;
             flex: 1;
+            margin-right: 250px; /* Adjust this to account for sidebar width if needed */
         }
         
         .chat-input {
@@ -192,7 +92,7 @@
             padding: 15px;
             border: none;
             border-radius: 25px;
-            background-color: #0C0E11;
+            background-color: #2F2F2F;
             color: #fff;
             outline: none;
         }
@@ -236,8 +136,8 @@
         
         .card.small {
             flex: 1;
-            height: 140px; /* Adjust height to match the example */
-            max-height: 140px; /* Ensure it doesn't exceed this height */
+            height: 160px; /* Adjust height to match the example */
+            max-height: 160px; /* Ensure it doesn't exceed this height */
             background-size: cover;
             background-position: center;
             border-radius: 10px;
@@ -445,28 +345,7 @@
                 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-.discover-btn {
-    background: linear-gradient(145deg, #C6CEE5, #8DCED6, #BADCD7, #E4E9F8, #BCD5DD);
-    color: #000; /* Assuming black text color for visibility */
-    border: none;
-    padding: 10px 20px; /* Adjust padding as needed */
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 12px; /* Rounded corners */
-    margin-bottom: 10px;
-    font-size: 16px; /* Adjust font size as needed */
-    font-weight: bold; /* Make text bold */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
-                0 1px 3px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s;
-}
 
-.discover-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 
-                0 2px 4px rgba(0, 0, 0, 0.08);
-}
 
 
 .new-thread {
@@ -523,20 +402,6 @@
     
 </head>
 <body>
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h2>F\EXIBILITY-2O</h2>
-            <p>Tips for getting started</p>
-            <ul>
-                <li><strong>Ask anything!:</strong> F\EXIBILITY can answer questions, help you learn, write code, brainstorm together, and much more.</li>
-                <li><strong>Don’t share sensitive info:</strong> Chat history may be reviewed or used to improve our services. Learn more about your choices in our <a href="https://arcaii.github.io/flexibility/">Help Center</a>.</li>
-                <li><strong>Check your facts:</strong> While we have safeguards, F\EXIBILITY may give you inaccurate information. It’s not intended to give advice.</li>
-            </ul>
-            <button id="close-btn" class="close-button">Okay, let's go</button>
-        </div>
-    </div>
-
     <style>
         .popup {
             display: none;
@@ -549,38 +414,49 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .popup-content {
-            background-color: #000000;
+            background-color: #070707;
             color: #ffffff;
-            padding: 20px;
+            padding: 0;
             border-radius: 8px;
             width: 400px;
             text-align: left;
             position: relative;
+            overflow: hidden; /* Ensures the image stays within the borders */
         }
-        
-        .popup-content h2 {
+
+        .popup-content img {
+            width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .popup-content .content {
+            padding: 20px;
+        }
+
+        .popup-content .content h2 {
             margin-top: 0;
         }
-        
-        .popup-content p {
+
+        .popup-content .content p {
             margin: 10px 0;
         }
-        
-        .popup-content ul {
+
+        .popup-content .content ul {
             padding-left: 20px;
         }
-        
-        .popup-content ul li {
+
+        .popup-content .content ul li {
             margin-bottom: 10px;
         }
-        
-        .popup-content a {
+
+        .popup-content .content a {
             color: #7289DA;
             text-decoration: none;
         }
-        
+
         .popup-content .close-btn {
             position: absolute;
             top: 10px;
@@ -589,7 +465,7 @@
             font-size: 24px;
             cursor: pointer;
         }
-        
+
         .close-button {
             background-color: #7289DA;
             color: #ffffff;
@@ -601,36 +477,230 @@
             display: block;
             margin: 20px auto 0;
         }
+
+        .sidebar-logo {
+            width: 80px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 20px;
+        }
     </style>
+</head>
+<body>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <img src="https://framerusercontent.com/images/WvKAdupeiMT6dfuzud0D6d2kJs.jpeg?scale-down-to=1024" alt="Content Image">
+            <div class="content">
+                <h2>F\EXIBILITY-2O</h2>
+              
+                <ul>
+                    <li><strong>Ask anything!:</strong> F\EXIBILITY can answer questions, help you learn, write code, brainstorm together, and much more but we are in BETA.Please wait for updates.</li>
+                   
+                </ul>
+                <button id="popup-close-btn" class="close-button">Okay, let's go</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var popup = document.getElementById('popup');
+            var closeBtn = document.getElementById('close-btn');
+            var popupCloseBtn = document.getElementById('popup-close-btn');
+
+            popup.style.display = 'flex';
+
+            closeBtn.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
+
+            popupCloseBtn.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
+        });
+    </script>
+    <body style="background-color: #000; color: #fff;">
+
     <div class="container">
-        <div class="sidebar">
-            <img src="b.png" alt="Logo" class="sidebar-logo">
+        <div id="sidebar" class="sidebar" style="background-color: #000000; color: #fff;">
+            <img src="b.png" alt="Logo" class="sidebar-logo" style="width: 145px; height: 40px;">
+
             <button class="new-thread" onclick="reloadToPage()">New Thread Ctrl I</button>
             <script>
                 function reloadToPage() {
                     window.location.href = "https://arcaii.github.io/chat/";
                 }
             </script>
-            <button class="menu-btn study-btn" onclick="redirectToPage()">Study</button>
+            <button class="menu-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
+                <img src="1.svg" alt="Study Icon"> Study
+            </button>
+            
+            <button id="toggle-mode-btn" class="menu-btn">
+                <img src="2.svg" alt="Library Icon"> Light mode
+            </button>
+            
             <script>
-                function redirectToPage() {
-                    window.location.href = "https://arcaii.github.io/flexibility/";
-                }
-                </script>
-                
-            <button class="menu-btn discover-btn" onclick="redirectToPage()">Discover</button>
-            <button class="menu-btn" onclick="redirectToPage()">Library</button>
+                document.getElementById('toggle-mode-btn').addEventListener('click', function() {
+                    const body = document.body;
+                    const sidebar = document.getElementById('sidebar');
+                    const chatContainer = document.getElementById('chat-container');
+                    const currentMode = body.dataset.mode || 'dark';
+        
+                    if (currentMode === 'dark') {
+                        body.style.backgroundColor = '#fff';
+                        body.style.color = '#000';
+                        sidebar.style.backgroundColor = '#fff';
+                        sidebar.style.color = '#000';
+                        chatContainer.style.backgroundColor = '#fff';
+                        chatContainer.style.color = '#000';
+                        body.dataset.mode = 'light';
+                        this.innerHTML = '<img src="2.svg" alt="Library Icon"> Dark mode';
+                    } else {
+                        body.style.backgroundColor = '#000';
+                        body.style.color = '#fff';
+                        sidebar.style.backgroundColor = '#000';
+                        sidebar.style.color = '#fff';
+                        chatContainer.style.backgroundColor = '#000';
+                        chatContainer.style.color = '#fff';
+                        body.dataset.mode = 'dark';
+                        this.innerHTML = '<img src="2.svg" alt="Library Icon"> Light mode';
+                    }
+                });
+            </script>
+                        
+            
             <div class="try-pro">
-                <img src="dis.png" alt="Logo" class="logo">
-                <button class="discover-btn" onclick="redirectToPage()">Discover Me</button>
-
+                <button class="discover-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
+                    <img src="3.svg" alt="Discover Me Icon"> Discover Me
+                </button>
             </div>
             
-            <button class="upgrade-btn" onclick="redirectToPage()">Upgrade Plan</button>
+            <button class="upgrade-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
+                <img src="4.svg" alt="Upgrade Plan Icon"> Upgrade Plan
+            </button>
+            
         </div>
 
+        <style>
+            .menu-btn img,
+            .discover-btn img,
+            .upgrade-btn img {
+                width: 20px; /* Adjust the width of the icon as needed */
+                height: 20px; /* Adjust the height of the icon as needed */
+                margin-right: 10px; /* Adjust the spacing between the icon and text */
+                vertical-align: middle; /* Align the icon vertically with the text */
+            }
+             
+        </style>
+    
         <script>
+            function redirectToPage(url) {
+                window.location.href = url;
+            }
+        </script>
 
+        <style>
+            .sidebar {
+                width: 250px;
+                background-color: #000000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            
+            .sidebar-logo {
+                width: 80px; /* Adjust size as needed */
+                height: auto;
+                margin-bottom: 20px;
+            }
+            
+            .new-thread {
+                background-color: #444;
+                color: #fff;
+                border: none;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .menu-btn {
+                background-color: #000000;
+                color: #fff;
+                border: none;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .try-pro {
+                background-color: #000000;
+                padding: 10px;
+                text-align: center;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            
+            .try-pro .logo {
+                width: 50px; /* Adjust size as needed */
+                height: auto;
+                margin-bottom: 10px;
+            }
+            
+            .try-pro .sun-icon {
+                width: 30px; /* Adjust size as needed */
+                height: auto;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            
+            .discover-btn,
+            .dark-mode-btn {
+                background-color: #000000;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .user-section {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            
+            .user-icon {
+                width: 40px;
+                height: 40px;
+                background-color: #ff6347;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+            }
+            
+            .download-btn,
+            .upgrade-btn {
+                background-color: #000000;
+                color: #fff;
+                border: none;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+        </style>
+        <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var popup = document.getElementById('popup');
                 var closeBtn = document.querySelector('.close-btn');
@@ -654,21 +724,28 @@
         
            <div class="container">
         <div class="card-container">
-            <div class="card large" style="background-image: url('https://images.ctfassets.net/kftzwdyauwt9/2CPrXUZS0yLGo894hU24zv/b9e1759c6f213a8888e17852266c515b/apple-art-2a-3x4.jpg?w=2048&q=90&fm=webp');">
+            <div class="card large" style="background-image: url('https://framerusercontent.com/images/GOcgnEW9iEFxZT73j5qQdANUuI.jpg?scale-down-to=1024');">
                 <div class="label">Company · Jun 10, 2024</div>
                 <div class="title">OpenAI and QubeAI announce partnership</div>
+            </div>
+            <div class="card large" style="background-image: url('https://framerusercontent.com/images/7kssT89iBCO3qdpVSdHuaDlcFJQ.png?scale-down-to=1024');">
+                <div class="label">Product · Jun 18, 2024</div>
+                <div class="title">We are back with a great relaunch!</div>
             </div>
             <div class="small-cards">
                 <div class="card small" style="background-image: url('1.png');">
                     <div class="label">Research · May 13, 2024</div>
                     <div class="title">Hello F\EXIBILITY-2O</div>
                 </div>
-                <div class="card small" style="background-image: url('https://images.ctfassets.net/kftzwdyauwt9/1qCEfO78yhwFeaBFu3kCd6/b57a627f10f4a353443994ed06453056/ChatGPT_Education.png?w=750&q=90&fm=webp');">
+              
+                <div class="card small" style="background-image: url('https://framerusercontent.com/images/DmyNF963XDFsr1okA4AaBlK8g.png?scale-down-to=1024');">
                     <div class="label">Safety & Alignment · May 28, 2024</div>
                     <div class="title">QubeAI Board Forms agreement with OpenAI</div>
                 </div>
+               
             </div>
         </div>
+        
 
                 
                 <div class="chat-container" id="chat-messages">
@@ -836,4 +913,12 @@
 <style>
     
 </style>
+
+<style>
+    .bold {
+        font-weight: bold;
+    }
+</style>
+
+
 </html>

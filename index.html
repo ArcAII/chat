@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F\EXIBILITY-2O </title>
+    <title>F\EXIBILITY</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 
     <meta name="description" content="New Gen of AI"/>
@@ -92,7 +92,7 @@
             padding: 15px;
             border: none;
             border-radius: 25px;
-            background-color: #2F2F2F;
+            background-color: #05030D;
             color: #fff;
             outline: none;
         }
@@ -180,7 +180,7 @@
         border-radius: 15px;
         margin-top: 20px;
         overflow-y: auto;
-        height: calc(100vh - 200px); /* Adjust this value as needed */
+        height: calc(100vh - 100px); /* Adjust this value as needed */
         position: absolute; /* Position absolute to cover the extreme right */
         right: 0; /* Align it to the extreme right */
         width: 70%; /* Adjust the width as needed */
@@ -675,11 +675,21 @@
                 align-items: center;
                 margin-bottom: 10px;
             }
+            .message.user {
+                background-color: #d3d3d3; /* Light grey background */
+                color: #000; /* Black text color */
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                max-width: 70%;
+                align-self: flex-start;
+            }
+            
             
             .user-icon {
                 width: 40px;
                 height: 40px;
-                background-color: #ff6347;
+                background-color: #000000;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
@@ -700,6 +710,18 @@
                 margin-bottom: 10px;
             }
         </style>
+        <style>
+            .message.user {
+                background-color: #D3D3D3; /* Light grey color */
+                color: #000; /* Black text color */
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                max-width: 70%;
+                align-self: flex-start;
+            }
+        </style>
+        
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var popup = document.getElementById('popup');
@@ -719,6 +741,7 @@
                     popup.style.display = 'none';
                 });
             });
+            
             
         </script>
         
@@ -753,7 +776,19 @@
                 </div>
                 <div class="chat-input">
                     <input type="text" id="user-input" placeholder="Ask a question or type '/' for commands">
-                    <button id="sendButton" onclick="sendMessage()">Send</button>
+                   <button id="sendButton" onclick="sendMessage()">
+    <img src="send.png" alt="Send">
+</button>
+
+<style>
+    #sendButton img {
+    width: 32px; /* Set desired width */
+    height: 32px; /* Set desired height */
+    display: block; /* Ensure the image is treated as a block element */
+}
+</style>
+
+
                 </div>
             </div>
         </div>

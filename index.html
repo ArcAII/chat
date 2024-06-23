@@ -193,20 +193,32 @@
 
 
         
-        .message {
-            background-color: #0E1114;
-            color: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            max-width: 70%;
-            align-self: flex-start;
-        }
-        
-        .message.bot {
-            background-color: #1E90FF;
-            align-self: flex-end;
-        }
+       /* Base message style */
+.message {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+}
+
+/* Bot messages aligned to the left with margin */
+.message.bot {
+    background-color: #1E90FF;
+    align-self: flex-start;
+    margin-right: auto; /* Add margin to the right for spacing */
+    margin-left: 10px; /* Add left margin for consistent spacing */
+}
+
+/* User messages aligned to the right with margin */
+.message.user {
+    background-color: #4CAF50; /* Change the color if desired */
+    align-self: flex-end;
+    margin-left: auto; /* Add margin to the left for spacing */
+    margin-right: 10px; /* Add right margin for consistent spacing */
+}
+
         
         .avatar {
             display: flex;
@@ -348,42 +360,52 @@
 
 
 
+/* Define keyframes for the gradient animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Button styling */
 .new-thread {
-    background: linear-gradient(145deg, #BBD5E9, #DF9A94, #C9CADC);
-    color: #000; /* Assuming black text color for visibility */
+    background: linear-gradient(145deg, #E5D7CE, #90A4C3, #E5D8D0, #AAC9DB, #AFCDDB);
+    background-size: 290% 290%;
+    animation: gradientAnimation 3s ease infinite;
+    color: #ffffff; /* Assuming white text color for visibility */
     border: none;
-    padding: 10px 20px; /* Adjust padding as needed */
-    width: 100%;
+    padding: 10px 20px; /* Increased padding */
+    width: auto; /* Adjust to fit text content */
     text-align: center;
     cursor: pointer;
     border-radius: 12px; /* Rounded corners */
     margin-bottom: 10px;
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 13px; /* Slightly increased font size */
     font-weight: bold; /* Make text bold */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
                 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s, background-position 0.5s;
-    background-size: 200% 200%;
-    animation: gradientAnimation 5s ease infinite;
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 1px; /* Add spacing between letters */
+   
+    white-space: nowrap; /* Ensure text is on one line */
+    max-width: 170%; /* Ensure it doesn't overflow the container */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* 3D effect on hover */
 .new-thread:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 
-                0 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* Active state for click effect */
+.new-thread:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                0 1px 3px rgba(0, 0, 0, 0.08);
 }
+
 
 
 
@@ -524,19 +546,153 @@
         <div id="sidebar" class="sidebar" style="background-color: #000000; color: #fff;">
             <img src="b.png" alt="Logo" class="sidebar-logo" style="width: 145px; height: 40px;">
 
-            <button class="new-thread" onclick="reloadToPage()">New Thread Ctrl I</button>
+            <button class="new-thread" onclick="reloadToPage()">New Thread</button>
             <script>
                 function reloadToPage() {
                     window.location.href = "https://arcaii.github.io/chat/";
                 }
             </script>
-            <button class="menu-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
-                <img src="1.svg" alt="Study Icon"> Study
-            </button>
+            <div class="buttons-container">
+                <button class="menu-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
+                    <img src="1.svg" alt="Study Icon"> Study
+                </button>
+                
+                <button id="toggle-mode-btn" class="menu-btn">
+                    <img src="2.svg" alt="Library Icon"> Light mode
+                </button>
+                
+                <button class="discover-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
+                    <img src="3.svg" alt="Discover Me Icon"> Discover Me
+                </button>
+                
+                <button class="upgrade-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
+                    <img src="4.svg" alt="Upgrade Plan Icon"> Upgrade Plan
+                </button>
+            </div>
+
+            <div class="bottom-section">
+                <a href="https://discord.com" class="discord-button">
+                    <img src="discord-icon.svg" alt="Discord Icon" class="discord-icon"> 
+                   Join our Community
+                </a>
+            </div>
+
+            <div class="try pro">
+                
+            </div>
+        
+            <style>
+                .bottom-section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 20px;
+                }
+        
+                .discord-button {
+                    display: flex;
+                    align-items: center;
+                    background: linear-gradient(45deg, #b5c2f2, #697fec, #2342b1);
+                    background-size: 400% 400%;
+                    animation: gradientAnimation 15s ease infinite;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    color: white;
+                    font-size: 16px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: background 0.3s, transform 0.3s;
+                }
+        
+                .discord-button:hover {
+                    transform: scale(1.05);
+                }
+        
+                .discord-icon {
+                    width: 24px; /* Adjust width as needed */
+                    height: 24px; /* Adjust height as needed */
+                    margin-right: 8px; /* Adjust margin as needed */
+                }
+        
+                @keyframes gradientAnimation {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+            </style>
+            <style>
+
+                .x-logo {
+                    width: 24px; /* Adjust width as needed */
+                    height: 24px; /* Adjust height as needed */
+                    margin-left: 8px; /* Adjust margin as needed */
+                }/* Define keyframes for the gradient animation */
+
+                
+                .try-pro {
+                    background-color: #000000;
+                    padding: 10px;
+                    text-align: center;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    cursor: pointer;
+                }
+                
+                .sidebar {
+                    width: 250px;
+                    background-color: #000000;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 20px;
+                }
+                
+                .sidebar-logo {
+                    width: 80px; /* Adjust size as needed */
+                    height: auto;
+                    margin-bottom: 20px;
+                }
+                
+                .menu-btn {
+                    background-color: #000000;
+                    color: #fff;
+                    border: none;
+                    padding: 10px;
+                    width: 100%;
+                    text-align: center;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+                
+                .buttons-container {
+                    display: flex;
+                    justify-content: center; /* Align buttons horizontally center */
+                    align-items: center; /* Align buttons vertically center */
+                    flex-wrap: wrap; /* Wrap buttons to new line if necessary */
+                    gap: 10px; /* Adjust gap between buttons */
+                    padding: 20px;
+                }
+                
+                @keyframes buttonClick {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(0.95); }
+                    100% { transform: scale(1); }
+                }
+                
+                .menu-btn:active,
+                .discover-btn:active,
+                .upgrade-btn:active {
+                    animation: buttonClick 0.2s;
+                }
+                
+            </style>
             
-            <button id="toggle-mode-btn" class="menu-btn">
-                <img src="2.svg" alt="Library Icon"> Light mode
-            </button>
             
             <script>
                 document.getElementById('toggle-mode-btn').addEventListener('click', function() {
@@ -567,28 +723,67 @@
                 });
             </script>
                         
-            
-            <div class="try-pro">
-                <button class="discover-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
-                    <img src="3.svg" alt="Discover Me Icon"> Discover Me
-                </button>
-            </div>
-            
-            <button class="upgrade-btn" onclick="redirectToPage('https://arcaii.github.io/flexibility/')">
-                <img src="4.svg" alt="Upgrade Plan Icon"> Upgrade Plan
-            </button>
+          
             
         </div>
 
         <style>
+            .menu-btn,
+            .discover-btn,
+            .upgrade-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 5px; /* Adjust spacing between buttons */
+                padding: 6px 12px; /* Decreased padding for a smaller size */
+                font-size: 12px; /* Smaller font size */
+                font-weight: normal; /* Regular font weight */
+                color: #000;
+                background: #f0f0f0;
+                border: none;
+                border-radius: 6px; /* Adjusted border radius */
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            }
+            
+            .menu-btn:hover,
+            .discover-btn:hover,
+            .upgrade-btn:hover {
+                background-color: #d0d0d0;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            
             .menu-btn img,
             .discover-btn img,
             .upgrade-btn img {
-                width: 20px; /* Adjust the width of the icon as needed */
-                height: 20px; /* Adjust the height of the icon as needed */
-                margin-right: 10px; /* Adjust the spacing between the icon and text */
-                vertical-align: middle; /* Align the icon vertically with the text */
+                width: 16px; /* Adjusted width for smaller icons */
+                height: 16px; /* Adjusted height for smaller icons */
+                margin-right: 4px; /* Smaller margin for a compact look */
             }
+            
+            .buttons-container {
+                display: flex;
+                justify-content: center; /* Align buttons horizontally center */
+                align-items: center; /* Align buttons vertically center */
+                flex-wrap: wrap; /* Wrap buttons to new line if necessary */
+                gap: 10px; /* Adjust gap between buttons */
+                padding: 20px;
+            }
+            
+            @keyframes buttonClick {
+                0% { transform: scale(1); }
+                50% { transform: scale(0.95); }
+                100% { transform: scale(1); }
+            }
+            
+            .menu-btn:active,
+            .discover-btn:active,
+            .upgrade-btn:active {
+                animation: buttonClick 0.2s;
+            }
+            
+
              
         </style>
     
@@ -614,17 +809,7 @@
                 margin-bottom: 20px;
             }
             
-            .new-thread {
-                background-color: #444;
-                color: #fff;
-                border: none;
-                padding: 10px;
-                width: 100%;
-                text-align: center;
-                cursor: pointer;
-                border-radius: 5px;
-                margin-bottom: 10px;
-            }
+           
             
             .menu-btn {
                 background-color: #000000;
@@ -675,28 +860,7 @@
                 align-items: center;
                 margin-bottom: 10px;
             }
-            .message.user {
-                background-color: #d3d3d3; /* Light grey background */
-                color: #000; /* Black text color */
-                padding: 10px;
-                border-radius: 10px;
-                margin-bottom: 10px;
-                max-width: 70%;
-                align-self: flex-start;
-            }
-            
-            
-            .user-icon {
-                width: 40px;
-                height: 40px;
-                background-color: #000000;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-right: 10px;
-            }
-            
+           
             .download-btn,
             .upgrade-btn {
                 background-color: #000000;
@@ -711,15 +875,7 @@
             }
         </style>
         <style>
-            .message.user {
-                background-color: #D3D3D3; /* Light grey color */
-                color: #000; /* Black text color */
-                padding: 10px;
-                border-radius: 10px;
-                margin-bottom: 10px;
-                max-width: 70%;
-                align-self: flex-start;
-            }
+            
         </style>
         
         <script>
@@ -746,36 +902,85 @@
         </script>
         
            <div class="container">
-        <div class="card-container">
-            <div class="card large" style="background-image: url('https://framerusercontent.com/images/GOcgnEW9iEFxZT73j5qQdANUuI.jpg?scale-down-to=1024');">
-                <div class="label">Company · Jun 10, 2024</div>
-                <div class="title">OpenAI and QubeAI announce partnership</div>
-            </div>
-            <div class="card large" style="background-image: url('https://framerusercontent.com/images/7kssT89iBCO3qdpVSdHuaDlcFJQ.png?scale-down-to=1024');">
-                <div class="label">Product · Jun 18, 2024</div>
-                <div class="title">We are back with a great relaunch!</div>
-            </div>
-            <div class="small-cards">
-                <div class="card small" style="background-image: url('1.png');">
-                    <div class="label">Research · May 13, 2024</div>
-                    <div class="title">Hello F\EXIBILITY-2O</div>
+            <div class="card-container">
+                <div class="card large" style="background-image: url('https://framerusercontent.com/images/GOcgnEW9iEFxZT73j5qQdANUuI.jpg?scale-down-to=1024');" 
+                     onclick="openPopup('popup1')">
+                    <div class="label">Company · Jun 10, 2024</div>
+                    <div class="title">OpenAI and QubeAI announce partnership</div>
                 </div>
-              
-                <div class="card small" style="background-image: url('https://framerusercontent.com/images/DmyNF963XDFsr1okA4AaBlK8g.png?scale-down-to=1024');">
-                    <div class="label">Safety & Alignment · May 28, 2024</div>
-                    <div class="title">QubeAI Board Forms agreement with OpenAI</div>
-                </div>
-               
-            </div>
-        </div>
         
+                <div class="card large" style="background-image: url('https://framerusercontent.com/images/7kssT89iBCO3qdpVSdHuaDlcFJQ.png?scale-down-to=1024');"
+                     onclick="openPopup('popup2')">
+                    <div class="label">Product · Jun 18, 2024</div>
+                    <div class="title">We are back with a great relaunch!</div>
+                </div>
+        
+                <div class="small-cards">
+                    <div class="card small" style="background-image: url('1.png');" 
+                         onclick="openPopup('popup3')">
+                        <div class="label">Research · May 13, 2024</div>
+                        <div class="title">Hello F\EXIBILITY-2O</div>
+                    </div>
+                    
+                    <div class="card small" style="background-image: url('https://framerusercontent.com/images/DmyNF963XDFsr1okA4AaBlK8g.png?scale-down-to=1024');"
+                         onclick="openPopup('popup4')">
+                        <div class="label">Safety & Alignment · May 28, 2024</div>
+                        <div class="title">QubeAI Board Forms agreement with OpenAI</div>
+                    </div>
+                </div>
+            </div>
 
+          
+            <!-- Popups -->
+            <div class="popup" id="popup1">
+                <span class="close-button" onclick="closePopup('popup1')">×</span>
+                <h2>Two AI Titans Join Forces: OpenAI and QubeAI Announce Strategic Partnership</h2>
+                <p>In a move set to reverberate throughout the artificial intelligence landscape, OpenAI and QubeAI today announced a strategic partnership, signaling a joint commitment to pushing the boundaries of AI development and accessibility.
+                    While specific details remain under wraps, both companies have confirmed that the collaboration will focus on:
+                    Democratizing AI: OpenAI, renowned for its groundbreaking research and platforms like ChatGPT, will work with QubeAI, a leader in developing AI solutions for diverse industries, to make advanced AI tools and technologies more widely available. This could mean simplified access for businesses and developers to incorporate cutting-edge AI into their operations.
+                    Accelerated AI Innovation: The partnership aims to foster a synergistic environment that accelerates the development of new AI solutions. Combining OpenAI's research prowess with QubeAI's practical industry experience has the potential to yield breakthroughs in areas like natural language processing, machine learning, and computer vision.
+                    Ethical and Responsible AI Development: Both companies are strong advocates for ethical AI. This collaboration will prioritize the development and deployment of AI technologies in a way that is fair, unbiased, and beneficial to society as a whole.
+                    What This Means for the Future of AI
+                    This partnership holds significant implications for the future of AI:
+                    A New Wave of AI-Powered Applications: By making powerful AI tools more accessible, we can expect to see a surge in innovative applications across industries, from healthcare and finance to education and entertainment.
+                    Increased Competition and Innovation: The collaboration between two industry leaders is likely to spur further competition and drive innovation within the AI sector, ultimately benefiting end-users with more sophisticated and effective AI solutions.
+                    Heightened Focus on Ethical Considerations: The partnership's emphasis on ethical AI development sets a strong precedent for the industry, encouraging responsible innovation and deployment practices.
+                    The OpenAI and QubeAI partnership marks a pivotal moment in the evolution of artificial intelligence. While the full scope of this collaboration is yet to unfold, one thing is certain: the future of AI is looking brighter and more accessible than ever before.</p>
+            </div>
+        
+            <div class="popup" id="popup2">
+                <span class="close-button" onclick="closePopup('popup2')">×</span>
+                <h2>Popup 2</h2>
+                <p>Content for popup 2 goes here.</p>
+            </div>
+        
+            <div class="popup" id="popup3">
+                <span class="close-button" onclick="closePopup('popup3')">×</span>
+                <h2>Popup 3</h2>
+                <p>Content for popup 3 goes here.</p>
+            </div>
+        
+            <div class="popup" id="popup4">
+                <span class="close-button" onclick="closePopup('popup4')">×</span>
+                <h2>Popup 4</h2>
+                <p>Content for popup 4 goes here.</p>
+            </div>
+        
+            <script>
+                function openPopup(popupId) {
+                    document.getElementById(popupId).style.display = 'block';
+                }
+        
+                function closePopup(popupId) {
+                    document.getElementById(popupId).style.display = 'none';
+                }
+            </script>
                 
                 <div class="chat-container" id="chat-messages">
                     <!-- Messages will appear here -->
                 </div>
                 <div class="chat-input">
-                    <input type="text" id="user-input" placeholder="Ask a question or type '/' for commands">
+                    <input type="text" id="user-input" placeholder="Message F\EXIBILITY">
                    <button id="sendButton" onclick="sendMessage()">
     <img src="send.png" alt="Send">
 </button>
@@ -925,7 +1130,20 @@
         }
     </script>
 
-
+<style>
+    .user {
+        background-color: #2F2F2F;
+        color: white;
+        text-align: right;
+        padding: 12px 15px;
+        border-radius: 20px;
+        margin: 10px 0;
+        max-width: 70%;
+        margin-left: auto;
+        clear: both;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
     <script>
         document.addEventListener('keydown', function(event) {
             // Check if Ctrl (Control) key and I key are pressed

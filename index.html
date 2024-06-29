@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F\EXIBILITY</title>
+    <title>F\EXIBILTY</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 
@@ -27,8 +27,6 @@
     <meta name="twitter:image:width" content="1600"/>
     <meta name="twitter:image:height" content="900"/>
     <link rel="icon" href="favi.ico"/>
-
-
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -159,7 +157,7 @@
             padding: 20px;
             overflow-y: auto;
             display: flex;
-            flex-direction: column-reverse; /* Adjusted to reverse order */
+            flex-direction: column-reverse;
         }
 
         .chat-input-container {
@@ -200,7 +198,7 @@
         }
 
         .logo {
-            width: 140px;
+            width: 90px;
             height: 80px;
             fill: #e5e5e5;
         }
@@ -239,18 +237,127 @@
         .message.user .avatar {
             display: none;
         }
-
-        /* Added hidden class for logo-container */
-        .hidden {
-            display: none;
-        }
     </style>
 </head>
 <body>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #070707;
+            color: #ffffff;
+            padding: 0;
+            border-radius: 8px;
+            width: 400px;
+            text-align: left;
+            position: relative;
+            overflow: hidden; /* Ensures the image stays within the borders */
+        }
+
+        .popup-content img {
+            width: 100%;
+            max-height: 500px; /* adjust this value as needed */
+            height: 200px; /* adjust this value to reduce height */
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            }
+
+        .popup-content .content {
+            padding: 20px;
+        }
+
+        .popup-content .content h2 {
+            margin-top: 0;
+        }
+
+        .popup-content .content p {
+            margin: 10px 0;
+        }
+
+        .popup-content .content ul {
+            padding-left: 20px;
+        }
+
+        .popup-content .content ul li {
+            margin-bottom: 10px;
+        }
+
+        .popup-content .content a {
+            color: #7289DA;
+            text-decoration: none;
+        }
+
+        .popup-content .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #ffffff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .close-button {
+            background-color: #7289DA;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+    
+    </style>
+
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <img src="https://images.ctfassets.net/kftzwdyauwt9/1FvOMUsGksVFICiCGGZuCq/cd40575607b8cf5a6000d3005b8042ba/35.png?w=1920&q=90&fm=webp" alt="Content Image">
+            <div class="content">
+                <h2>F\EXIBILITY-2O</h2>
+              
+                <ul>
+                    <li><strong>Ask anything!:</strong> F\EXIBILITY can answer questions, help you learn, write code, brainstorm together, and much more but we are in BETA. Please wait for updates.</li>
+                   
+                </ul>
+                <button id="popup-close-btn" class="close-button">Okay, let's go</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var popup = document.getElementById('popup');
+            var closeBtn = document.getElementById('close-btn');
+            var popupCloseBtn = document.getElementById('popup-close-btn');
+
+            popup.style.display = 'flex';
+
+            closeBtn.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
+
+            popupCloseBtn.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
+        });
+    </script>
     <div class="chat-container">
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>F\EXIBILITY</h2>
+                <h2>F\EXIBILTY</h2>
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
@@ -266,38 +373,27 @@
             <ul class="chat-list">
                 <li class="chat-list-item">
                     <div class="avatar">
-                        <img src="https://static-00.iconduck.com/assets.00/openai-icon-2021x2048-4rpe5x7n.png" alt="Avatar">
+                        <img src="option2.png" alt="Avatar">
                     </div>
                     <div class="chat-info">
-                        <h3>Matthew Sanders</h3>
-                        <p>US Road Trip Stops</p>
+                        <h3>Discover Me</h3>
+                       
                     </div>
-                    
-                </li>
-                <li class="chat-list-item">
-                    <div class="avatar">
-                        <img src="https://static-00.iconduck.com/assets.00/openai-icon-2021x2048-4rpe5x7n.png" alt="Avatar">
-                    </div>
-                    <div class="chat-info">
-                        <h3>Matthew Sanders</h3>
-                        <p>US Road Trip Stops</p>
-                    </div>
-                    
                 </li>
             </ul>
         </div>
         <div class="chat-window">
             <div class="chat-header">
-                <h2>F\EXIBILITY-2O</h2>
+                <h2>F\EXIBILTY</h2>
             </div>
             <div class="chat-content" id="chat-content">
                 <div class="logo-container" id="logo-container">
-                    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/13/ChatGPT-Logo.png" alt="Logo">
+                    <img class="logo" src="logo.jpg" alt="Logo">
                 </div>
             </div>
             <div class="chat-input-container">
                 <div class="chat-input">
-                    <input type="text" id="message-input" placeholder="Message F\EXIBILITY">
+                    <input type="text" id="message-input" placeholder="Message F\EXIBILTY">
                     <button id="send-button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
                             <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM8 4a.5.5 0 0 0-.5.5v4.793L5.354 7.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.293V4.5A.5.5 0 0 0 8 4z"/>
@@ -322,6 +418,7 @@
         const genAI = new GoogleGenerativeAI(API_KEY);
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     
+        // Rest of your JavaScript code remains the same
         document.getElementById("send-button").addEventListener("click", sendMessage);
         document.getElementById("message-input").addEventListener("keypress", function (e) {
             if (e.key === "Enter") {
@@ -333,14 +430,18 @@
             const userInput = document.getElementById("message-input").value;
             if (userInput.trim() === "") return;
     
-            document.getElementById("logo-container").classList.add("hidden"); // Hide logo instantly
+            addMessage("user", userInput);
             document.getElementById("message-input").value = "";
+    
+            // Hide the logo container when a message is sent
+            document.getElementById("logo-container").style.display = "none";
     
             const result = await model.generateContent(userInput);
             const response = await result.response;
             const text = await response.text();
-            addMessage("user", userInput);
             addMessage("model", text);
+    
+            document.getElementById("logo-container").classList.add("hidden");
         }
     
         function addMessage(role, text) {
@@ -360,10 +461,9 @@
             textDiv.innerText = text;
             messageDiv.appendChild(textDiv);
     
-            chatContent.prepend(messageDiv); // Prepend new messages to display at the top
-            chatContent.scrollTop = 0; // Scroll to top to show new message
+            chatContent.prepend(messageDiv);
+            chatContent.scrollTop = chatContent.scrollHeight;
         }
     </script>
-    
 </body>
 </html>

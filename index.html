@@ -345,6 +345,12 @@
         .dark-mode .message.model {
             background-color: #333; /* Darker tone for model messages */
         }
+
+        
+        .dark-mode .chat-input-container {
+            padding: 10px 20px;
+            border-top: 1px solid #000000;
+        }
     </style>
     <script>
      
@@ -390,7 +396,8 @@
                         <img src="option2.png" alt="Avatar">
                     </div>
                     <div class="chat-info">
-                        <h3>Discover Me</h3>
+                        <h3>Discover X</h3>
+                        <p>Discover the trending topics!</p>
                        
                     </div>
                 </li>
@@ -404,6 +411,183 @@
                         <h3>Dark mode</h3>
                     </div>
                 </li>
+
+                <li class="chat-list-item">
+                    <div class="avatar">
+                        <img src="banner.png" alt="Avatar">
+                    </div>
+                    <div class="chat-info">
+                        <h3>Study Mode</h3>
+                        <p>Make quizlet and notes!</p>
+                       
+                    </div>
+                </li>
+
+                <li class="chat-list-item" id="upgradePlanItem">
+                    <div class="avatar">
+                        <img src="send.png" alt="Avatar">
+                    </div>
+                    <div class="chat-info">
+                        <h3>Upgrade plan</h3>
+                        <p>Upgrade plan<br>Get GPT-4, DALL·E, and more</p>
+                    </div>
+                </li>
+
+
+<style>
+    .upgrade-plan-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #2F2F2F;
+        color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 800px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    .upgrade-plan-popup h2 {
+        margin-top: 0;
+        color: #ffffff;
+    }
+    .plans {
+        display: flex;
+        justify-content: space-around;
+    }
+    .plan {
+        width: 30%;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .plan h3 {
+        color: #ffffff;
+    }
+    .plan p {
+        font-size: 1.2em;
+        margin: 0 0 10px;
+    }
+    .plan ul {
+        list-style: none;
+        padding: 0;
+    }
+    .plan ul li {
+        margin-bottom: 10px;
+    }
+    .plan button {
+        background-color: #10A37F;
+        border: none;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .plan button:hover {
+        background-color: #0d8466;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+</style>
+
+
+<div class="overlay" id="overlay"></div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="upgrade-plan-popup" id="upgradePlanPopup">
+    <h2>Upgrade your plan</h2>
+    <div class="plans">
+        <div class="plan">
+            <h3>Free</h3>
+            <p>USD $0/month</p>
+            <ul>
+                <li>Assistance with writing, problem solving and more</li>
+                <li>Access to GPT-3.5</li>
+                <li>Limited access to GPT-4</li>
+                <li>Limited access to advanced data analysis, file uploads, web browsing, and custom GPTs</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <h3>Plus</h3>
+            <p>USD $20/month</p>
+            <ul>
+                <li>Early access to new features</li>
+                <li>Access to GPT-4, GPT-4o, GPT-3.5</li>
+                <li>Up to 5x more messages for GPT-4o</li>
+                <li>Access to advanced data analysis, file uploads, vision, and web browsing</li>
+                <li>DALL·E image generation</li>
+                <li>Create and use custom GPTs</li>
+            </ul>
+            <button onclick="alert('Upgrading to Plus')">Upgrade to Plus</button>
+        </div>
+        <div class="plan">
+            <h3>Team</h3>
+            <p>USD $25 per person/month</p>
+            <ul>
+                <li>Everything in Plus, and:</li>
+                <li>Higher limits for GPT-4, GPT-4o, and tools like DALL·E image generation, advanced data analysis, web browsing, and more</li>
+                <li>Create and share GPTs with your workspace</li>
+                <li>Admin console for workspace management</li>
+                <li>Team data excluded from training by default</li>
+            </ul>
+            <button onclick="alert('Upgrading to Team')">Upgrade to Team</button>
+        </div>
+    </div>
+    <button class="closed-button" onclick="closePopup()">×</button>
+    <style>
+        .closed-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px #000;
+            transition: all 0.2s ease-in-out;
+            }
+            
+            .closed-button:hover {
+            background-color: #000000;
+            }
+    </style>
+</div>
+    <script>
+        const upgradePlanItem = document.getElementById('upgradePlanItem');
+        const upgradePlanPopup = document.getElementById('upgradePlanPopup');
+        const overlay = document.getElementById('overlay');
+
+        upgradePlanItem.addEventListener('click', () => {
+            upgradePlanPopup.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        function closePopup() {
+            upgradePlanPopup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+    </script>
             </ul>
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
@@ -455,6 +639,10 @@
                 .dark-mode .chat-input {
                     background-color: #212121;
                 }
+
+                .dark-mode .chat-list-item:hover {
+                    background-color: #171717;
+                }
             </style>
         </div>
         <div class="chat-window">
@@ -469,12 +657,32 @@
             <div class="chat-input-container">
                 <div class="chat-input">
                     <input type="text" id="message-input" placeholder="Message F\EXIBILTY">
-                    <button id="send-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
-                            <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM8 4a.5.5 0 0 0-.5.5v4.793L5.354 7.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.293V4.5A.5.5 0 0 0 8 4z"/>
-                        </svg>
+                    <button id="send-button" class="send-button">
+                        <img src="send1.png" alt="Send Icon" class="rounded-image">
                     </button>
+                    
                 </div>
+                <style>
+                    .send-button {
+                        border: none;
+                        background: none;
+                        cursor: pointer;
+                        outline: none;
+                        padding: 0;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    }
+            
+                    .send-button:hover {
+                        transform: scale(1.1);
+                        
+                    }
+            
+                    .rounded-image {
+                        border-radius: 50%;
+                        width: 32px;
+                        height: 32px;
+                    }
+                </style>
             </div>
         </div>
     </div>

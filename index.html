@@ -14,7 +14,8 @@
     <meta property="og:title" content="F\EXIBILITY"/>
     <meta property="og:description" content="We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems. Building safe and beneficial AGI is our mission."/>
     <meta property="og:locale" content="en-US"/>
-    <meta property="og:image" content="flex.png"/>
+    <meta property="og:image" content="https://images.playground.com/e7c04e0bb13b4c3aaf763763ade6565c.jpeg"/>
+
 
     <meta property="og:image:width" content="1600"/>
     <meta property="og:image:height" content="900"/>
@@ -24,7 +25,8 @@
     <meta name="twitter:site" content="@Flexibility"/>
     <meta name="twitter:title" content="F\EXIBILITY"/>
     <meta name="twitter:description" content="We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems. Building safe and beneficial AGI is our mission."/>
-    <meta name="twitter:image" content="flex.png"/>
+    <meta name="twitter:image" content="https://images.playground.com/e7c04e0bb13b4c3aaf763763ade6565c.jpeg"/>
+
     <meta name="twitter:image:width" content="1600"/>
     <meta name="twitter:image:height" content="900"/>
     <link rel="icon" href="fav.ico"/>
@@ -424,10 +426,11 @@
         
     </script>
     <div class="chat-container">
+
         <div class="sidebar">
             <div class="sidebar-header">
                 <h2>F\EXIBILTY</h2>
-                <button>
+                <button class="close-sidebar-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                     </svg>
@@ -779,6 +782,72 @@ window.onclick = function(event) {
                 }
             </style>
         </div>
+        <style>
+            /* Default styles (desktop view) */
+.navbar {
+    display: none;
+}
+
+/* Styles for mobile view */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #F9F9F9;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .navbar .menu-button {
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .chat-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: absolute;
+        left: -100%;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .chat-window {
+        flex-grow: 1;
+        padding: 20px;
+    }
+}
+
+        </style>
+
+        <div class="navbar">
+            <h2>F\EXIBILITY</h2>
+            <span class="menu-button">&#9776;</span>
+        </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var menuButton = document.querySelector('.menu-button');
+        var closeSidebarButton = document.querySelector('.close-sidebar-button');
+        var sidebar = document.querySelector('.sidebar');
+    
+        menuButton.addEventListener('click', function () {
+            sidebar.classList.toggle('active');
+        });
+    
+        closeSidebarButton.addEventListener('click', function () {
+            sidebar.classList.remove('active');
+        });
+    });
+    
+    
+</script>        
         <div class="chat-window">
             <div class="chat-header">
                 <h2>F\EXIBILTY</h2>

@@ -14,7 +14,8 @@
     <meta property="og:title" content="F\EXIBILITY"/>
     <meta property="og:description" content="We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems. Building safe and beneficial AGI is our mission."/>
     <meta property="og:locale" content="en-US"/>
-    <meta property="og:image" content="https://images.ctfassets.net/kftzwdyauwt9/2CPrXUZS0yLGo894hU24zv/b9e1759c6f213a8888e17852266c515b/apple-art-2a-3x4.jpg?w=640&amp;q=90&amp;fm=webp"/>
+    <meta property="og:image" content="flex.png"/>
+
     <meta property="og:image:width" content="1600"/>
     <meta property="og:image:height" content="900"/>
     <meta property="og:image:alt" content="Abstract art featuring a striking contrast of teal and pink brushstrokes on an orange canvas, overlaid with the white F\EXIBILITY logo."/>
@@ -23,10 +24,10 @@
     <meta name="twitter:site" content="@Flexibility"/>
     <meta name="twitter:title" content="F\EXIBILITY"/>
     <meta name="twitter:description" content="We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems. Building safe and beneficial AGI is our mission."/>
-    <meta name="twitter:image" content="https://images.ctfassets.net/kftzwdyauwt9/2CPrXUZS0yLGo894hU24zv/b9e1759c6f213a8888e17852266c515b/apple-art-2a-3x4.jpg?w=640&amp;q=90&amp;fm=webp"/>
+    <meta name="twitter:image" content="flex.png"/>
     <meta name="twitter:image:width" content="1600"/>
     <meta name="twitter:image:height" content="900"/>
-    <link rel="icon" href="f.ico"/>
+    <link rel="icon" href="fav.ico"/>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -318,6 +319,34 @@
             margin: 20px auto 0;
         }
 
+
+        .new-thread-button {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 15px;  /* Rounded corners */
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: normal;  /* Normal text weight */
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px; /* Added margin for spacing */
+        }
+        
+        .new-thread-button:hover {
+            background-color: #edeff1;
+        }
+        
+        .new-thread-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 50%;  /* Circular image */
+        }
+        
+        
     
     </style>
 
@@ -351,6 +380,26 @@
             padding: 10px 20px;
             border-top: 1px solid #000000;
         }
+
+        .dark-mode .new-thread-button {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #060809;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 15px;  /* Rounded corners */
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: normal;  /* Normal text weight */
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px; /* Added margin for spacing */
+        }
+        
+        .dark-mode .new-thread-button:hover {
+            background-color: #070d13;
+        }
+        
     </style>
     <script>
      
@@ -384,12 +433,11 @@
                     </svg>
                 </button>
             </div>
-            <div class="search-bar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-                <input type="text" placeholder="Search">
-            </div>
+            <div class="new-thread-button" onclick="window.location.reload();">
+                <img src="logodark.png" alt="New Thread Icon" class="new-thread-icon">
+                <span>New Chat</span>
+                </div>
+            
             <ul class="chat-list">
                 <li class="chat-list-item">
                     <div class="avatar">
@@ -412,16 +460,35 @@
                     </div>
                 </li>
 
-                <li class="chat-list-item">
+                <li class="chat-list-item" id="study-item">
                     <div class="avatar">
                         <img src="banner.png" alt="Avatar">
                     </div>
                     <div class="chat-info">
                         <h3>Study Mode</h3>
                         <p>Make quizlet and notes!</p>
-                       
                     </div>
                 </li>
+
+                <li class="chat-list-item" id="study-item">
+                    <div class="avatar">
+                        <img src="sky.png" alt="Avatar">
+                    </div>
+                    <div class="chat-info">
+                        <h3>Coding Mode</h3>
+                        <p>In BETA</p>
+                    </div>
+                </li>
+                
+                <div id="study-popup" class="ipopup">
+                    <div class="ipopup-content">
+                        <span class="close">&times;</span>
+                        <p>Study prompt is copied and now you can make quizlets!</p>
+                    </div>
+                </div>
+
+                
+                
 
                 <li class="chat-list-item" id="upgradePlanItem">
                     <div class="avatar">
@@ -432,9 +499,76 @@
                         <p>Upgrade plan<br>Get GPT-4, DALL·E, and more</p>
                     </div>
                 </li>
+                <script>
+                    // Get the elements
+var studyItem = document.getElementById("study-item");
+var popup = document.getElementById("study-popup");
+var closeBtn = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the chat list item, show the popup
+studyItem.onclick = function() {
+    popup.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the popup
+closeBtn.onclick = function() {
+    popup.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the popup, close it
+window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
+}
+
+                </script>
 
 
 <style>
+    .chat-list-item {
+        cursor: pointer;
+    }
+    
+    .ipopup {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    .ipopup-content {
+        background-color: #000000;
+        color: white;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 300px;
+        border-radius: 10px; /* Rounded corners */
+        text-align: center;
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
     .upgrade-plan-popup {
         display: none;
         position: fixed;

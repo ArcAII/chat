@@ -29,7 +29,7 @@
 
     <meta name="twitter:image:width" content="1600"/>
     <meta name="twitter:image:height" content="900"/>
-    <link rel="icon" href="fav.ico"/>
+    <link rel="icon" href="fv.ico"/>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -442,16 +442,22 @@
                 </div>
             
             <ul class="chat-list">
-                <li class="chat-list-item">
+                <li class="chat-list-item" onclick="redirectToPage()" style="cursor: pointer;">
                     <div class="avatar">
                         <img src="option2.png" alt="Avatar">
                     </div>
                     <div class="chat-info">
                         <h3>Discover X</h3>
                         <p>Discover the trending topics!</p>
-                       
                     </div>
                 </li>
+                <script>
+                    function redirectToPage() {
+                        window.location.href = 'https://arcaii.github.io/discx/'; // Replace with your actual page URL
+                    }
+                    </script>
+                                    
+                
 
 
                 <li class="chat-list-item" id="dark-mode-toggle">
@@ -855,8 +861,11 @@ window.onclick = function(event) {
             <div class="chat-content" id="chat-content">
                 <div class="logo-container" id="logo-container">
                     <img class="logo" src="logo.jpg" alt="Logo">
+                    
                 </div>
             </div>
+
+            
             <div class="chat-input-container">
                 <div class="chat-input">
                     <input type="text" id="message-input" placeholder="Message F\EXIBILTY">

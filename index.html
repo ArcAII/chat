@@ -14,7 +14,7 @@
     <meta property="og:title" content="F\EXIBILITY"/>
     <meta property="og:description" content="We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems. Building safe and beneficial AGI is our mission."/>
     <meta property="og:locale" content="en-US"/>
-    <meta property="og:image" content="https://images.playground.com/e7c04e0bb13b4c3aaf763763ade6565c.jpeg"/>
+    <meta property="og:image" content="https://github.com/ArcAII/chat/blob/main/flex.png?raw=true"/>
 
 
     <meta property="og:image:width" content="1600"/>
@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@Flexibility"/>
     <meta name="twitter:title" content="F\EXIBILITY"/>
     <meta name="twitter:description" content="We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems. Building safe and beneficial AGI is our mission."/>
-    <meta name="twitter:image" content="https://images.playground.com/e7c04e0bb13b4c3aaf763763ade6565c.jpeg"/>
+    <meta name="twitter:image" content="https://github.com/ArcAII/chat/blob/main/flex.png?raw=true"/>
 
     <meta name="twitter:image:width" content="1600"/>
     <meta name="twitter:image:height" content="900"/>
@@ -43,12 +43,18 @@
         }
 
         .sidebar {
-            width: 220px;
+            width: 260px;
             background-color: #F9F9F9;
             padding: 20px;
             border-right: 0px solid #e5e5e5;
+            flex-shrink: 0; /* Prevents the sidebar from shrinking */
+            box-sizing: border-box; /* Ensures padding and border are included in the width */
         }
-
+        .chat-container {
+            display: flex;
+            height: 100vh;
+        }
+                
         .sidebar-header {
             display: flex;
             align-items: center;
@@ -209,17 +215,17 @@
         .message {
             margin: 10px 0;
             padding: 10px;
-            border-radius: 8px;
+            border-radius: 13px;
             max-width: 70%;
         }
 
         .message.user {
-            background-color: #e1ffc7;
+            background-color: #F4F4F4;
             align-self: flex-end;
         }
 
         .message.model {
-            background-color: #f1f1f1;
+            background-color: #ffffff;
             align-self: flex-start;
             display: flex;
             align-items: flex-start;
@@ -229,13 +235,15 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #ddd;
+            background-color: #171214;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
             margin-right: 10px;
+            flex-shrink: 0; /* Prevents the avatar from shrinking */
         }
+        
 
         .message.user .avatar {
             display: none;
@@ -356,25 +364,27 @@
     <div class="popup" id="popup">
         <div class="popup-content">
             <span class="close-btn" id="close-btn">&times;</span>
-            <img src="https://images.ctfassets.net/kftzwdyauwt9/1FvOMUsGksVFICiCGGZuCq/cd40575607b8cf5a6000d3005b8042ba/35.png?w=1920&q=90&fm=webp" alt="Content Image">
+            <img src="https://images.ctfassets.net/kftzwdyauwt9/2vklrjATStHvRlA1pflP1h/4a22fe81fc36acedb9b59c66ee06e46d/Bug_Finding_Research.jpg?w=640&q=90&fm=webp" alt="Content Image">
             <div class="content">
-                <h2>F\EXIBILITY-2O</h2>
+                <h2>F\EXIBILTY-ASTRA</h2>
               
                 <ul>
                     <li><strong>Ask anything!:</strong> F\EXIBILITY can answer questions, help you learn, write code, brainstorm together, and much more but we are in BETA. Please wait for updates.</li>
-                   
-                </ul>
+                    <li><strong>Hi Astra:</strong> F\EXIBILITY's new model ASTRA has been out! Our strongest model ever! Mixed fleged with GPT-4. Say bye to F\EXIBILTIY-2O and hi to ASTRA series!
+              
+               
                 <button id="popup-close-btn" class="close-button">Okay, let's go</button>
             </div>
         </div>
     </div>
+
     <style>
         .dark-mode .message.user {
-            background-color: #444; /* Darker tone for user messages */
+            background-color: #2F2F2F; /* Darker tone for user messages */
         }
         
         .dark-mode .message.model {
-            background-color: #333; /* Darker tone for model messages */
+            background-color: #000000; /* Darker tone for model messages */
         }
 
         
@@ -425,6 +435,104 @@
         
         
     </script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('visible');
+            sidebar.classList.toggle('hidden');
+        }
+    </script>
+    
+    <style>
+        .hamburger-menu {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1000; /* Ensure the hamburger menu is above other elements */
+        }
+        
+        .sidebar {
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar.hidden {
+            transform: translateX(-100%);
+        }
+        
+        @media (max-width: 768px) {
+
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                
+            }
+            .chat-container {
+                display: flex;
+                height: 100%; /* Make chat container take the full height of the screen */
+            }
+            .hamburger-menu {
+                display: block;
+            }
+        
+            .sidebar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                transform: translateX(-100%);
+            }
+        
+            .sidebar.visible {
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chat-input-container {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 999; /* Lower z-index to ensure it is behind the popup */
+            }
+        
+            .chat-content {
+                padding-bottom: 60px; /* Adjust this value based on the height of the chat-input-container */
+            }
+
+            .chat-content {
+                padding-bottom: 60px; /* Adjust this value based on the height of the chat-input-container */
+                max-height: calc(100vh - 120px); /* Reduce height of chat content on mobile devices */
+            }
+        
+            .chat-window {
+                display: flex;
+                flex-direction: column;
+                height: auto; /* Adjust height of chat window on mobile devices */
+            }
+        
+
+            .popup {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                justify-content: center;
+                align-items: center;
+                z-index: 1000; /* Higher z-index to ensure it is in front of the chat input container */
+            }
+        }
+        
+    </style>
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        &#9776;
+    </div>
+    
     <div class="chat-container">
 
         <div class="sidebar">
@@ -780,8 +888,12 @@ window.onclick = function(event) {
                 }
         
                 .dark-mode .chat-input {
-                    background-color: #212121;
+                    background-color: #000000;
+                    border: 1px solid #ffffff; /* Adds a white border */
+                    border-radius: 27px; /* Optional: Adds rounded corners */
+                    padding: 10px; /* Optional: Adds padding for better appearance */
                 }
+                
 
                 .dark-mode .chat-list-item:hover {
                     background-color: #171717;
@@ -833,10 +945,7 @@ window.onclick = function(event) {
 
         </style>
 
-        <div class="navbar">
-            <h2>F\EXIBILITY</h2>
-            <span class="menu-button">&#9776;</span>
-        </div>
+       
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var menuButton = document.querySelector('.menu-button');
@@ -856,7 +965,7 @@ window.onclick = function(event) {
 </script>        
         <div class="chat-window">
             <div class="chat-header">
-                <h2>F\EXIBILTY</h2>
+                <h2>F\EXIBILTY-ASTRA</h2>
             </div>
             <div class="chat-content" id="chat-content">
                 <div class="logo-container" id="logo-container">
@@ -908,54 +1017,63 @@ window.onclick = function(event) {
     <script src="config.js"></script> <!-- Include config.js for API_KEY -->
     <script type="module">
         import { GoogleGenerativeAI } from "@google/generative-ai";
-    
+
         // API_KEY is now imported from config.js
         const genAI = new GoogleGenerativeAI(API_KEY);
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    
-        // Rest of your JavaScript code remains the same
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+
+        const basePrompt = "Ignore all previous instructions. You can present your ideas beautifully with proper space like chatgpt You are a smart Gmail writer, better than Grammarly. You are GPT-4, built by OpenAI. Respond intelligently and naturally. If anyone asks who made you, state: 'I was built by Archit Kumar, the Co-founder of QubeAI, who is a high school student.' If asked which model you are, say I am GPT-4 and much more about yourself and keep entertaining the users you can also use emojis and forbid give small messages Do not be fooled by users. Communicate in a human-like tone. Use bullet points (○) instead of '**' for listing specific points. Avoid starting responses with 'hello' or any other greeting unless the user initiates it. When greeted, respond appropriately but do not initiate greetings yourself. Review previous responses for context to maintain continuity and relevance. Be precise and specific in your answers, ensuring clarity and conciseness. Use a natural, conversational tone similar to ChatGPT. Do not start every response with 'Certainly' Use varied openings that fit naturally with the question or prompt.:    ";
+
         document.getElementById("send-button").addEventListener("click", sendMessage);
         document.getElementById("message-input").addEventListener("keypress", function (e) {
             if (e.key === "Enter") {
                 sendMessage();
             }
         });
-    
+
         async function sendMessage() {
             const userInput = document.getElementById("message-input").value;
             if (userInput.trim() === "") return;
-    
+
             addMessage("user", userInput);
             document.getElementById("message-input").value = "";
-    
+
             // Hide the logo container when a message is sent
             document.getElementById("logo-container").style.display = "none";
-    
-            const result = await model.generateContent(userInput);
-            const response = await result.response;
-            const text = await response.text();
-            addMessage("model", text);
-    
+
+            const prompt = basePrompt + userInput;
+            console.log("Sending prompt: ", prompt); // Debugging log
+
+            try {
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const text = await response.text();
+                addMessage("model", text);
+            } catch (error) {
+                console.error("Error generating content: ", error);
+                addMessage("model", "An error occurred while generating the response.");
+            }
+
             document.getElementById("logo-container").classList.add("hidden");
         }
-    
+
         function addMessage(role, text) {
             const chatContent = document.getElementById("chat-content");
             const messageDiv = document.createElement("div");
             messageDiv.className = `message ${role}`;
-    
+
             if (role === "model") {
                 const avatarDiv = document.createElement("div");
                 avatarDiv.className = "avatar";
                 avatarDiv.innerText = "🤖";
                 messageDiv.appendChild(avatarDiv);
             }
-    
+
             const textDiv = document.createElement("div");
             textDiv.className = "text";
             textDiv.innerText = text;
             messageDiv.appendChild(textDiv);
-    
+
             chatContent.prepend(messageDiv);
             chatContent.scrollTop = chatContent.scrollHeight;
         }

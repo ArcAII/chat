@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F\EXIBILTY</title>
+    <title>F\EXIBILITY</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 
@@ -180,6 +180,7 @@
             background-color: #f5f5f5;
             border-radius: 20px;
             padding: 8px 12px;
+            font-size: 18px; /* Increased font size for better visibility */
         }
 
         .chat-input input {
@@ -188,7 +189,11 @@
             outline: none;
             padding: 5px;
             flex-grow: 1;
+            font-size: 17px; /* Increased font size for better visibility */
         }
+
+     
+
 
         .chat-input button {
             background: none;
@@ -207,11 +212,12 @@
         }
 
         .logo {
-            width: 90px;
-            height: 80px;
+            width: 320px; /* Adjust the width to make it larger */
+            height: 370px; /* Adjust the height to make it larger */
             fill: #e5e5e5;
         }
-
+        
+        
         .message {
             margin: 10px 0;
             padding: 10px;
@@ -366,11 +372,11 @@
             <span class="close-btn" id="close-btn">&times;</span>
             <img src="https://images.ctfassets.net/kftzwdyauwt9/2vklrjATStHvRlA1pflP1h/4a22fe81fc36acedb9b59c66ee06e46d/Bug_Finding_Research.jpg?w=640&q=90&fm=webp" alt="Content Image">
             <div class="content">
-                <h2>F\EXIBILTY-ASTRA</h2>
+                <h2>F\EXIBILITY-ASTRA</h2>
               
                 <ul>
                     <li><strong>Ask anything!:</strong> F\EXIBILITY can answer questions, help you learn, write code, brainstorm together, and much more but we are in BETA. Please wait for updates.</li>
-                    <li><strong>Hi Astra:</strong> F\EXIBILITY's new model ASTRA has been out! Our strongest model ever! Mixed fleged with GPT-4. Say bye to F\EXIBILTIY-2O and hi to ASTRA series!
+                    <li><strong>Hi Astra:</strong> F\EXIBILITY's new model ASTRA has been out! Our strongest model ever! Mixed fleged with GPT-4. Say bye to F\EXIBILITY-2O and hi to ASTRA series!
               
                
                 <button id="popup-close-btn" class="close-button">Okay, let's go</button>
@@ -537,7 +543,7 @@
 
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>F\EXIBILTY</h2>
+                <h2>F\EXIBILITY</h2>
                 <button class="close-sidebar-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
@@ -888,8 +894,8 @@ window.onclick = function(event) {
                 }
         
                 .dark-mode .chat-input {
-                    background-color: #000000;
-                    border: 1px solid #ffffff; /* Adds a white border */
+                    background-color: #121111;
+                    border: 1px solid #000000; /* Adds a white border */
                     border-radius: 27px; /* Optional: Adds rounded corners */
                     padding: 10px; /* Optional: Adds padding for better appearance */
                 }
@@ -965,19 +971,21 @@ window.onclick = function(event) {
 </script>        
         <div class="chat-window">
             <div class="chat-header">
-                <h2>F\EXIBILTY-ASTRA</h2>
+                <h2>F\EXIBILITY-ASTRA</h2>
             </div>
             <div class="chat-content" id="chat-content">
                 <div class="logo-container" id="logo-container">
-                    <img class="logo" src="logo.jpg" alt="Logo">
+                    <img class="logo" src="logo1.jpg" alt="Logo">
+                   
                     
                 </div>
+                
             </div>
 
             
             <div class="chat-input-container">
                 <div class="chat-input">
-                    <input type="text" id="message-input" placeholder="Message F\EXIBILTY">
+                    <input type="text" id="message-input" placeholder="Chat with Legacy Model">
                     <button id="send-button" class="send-button">
                         <img src="send1.png" alt="Send Icon" class="rounded-image">
                     </button>
@@ -1020,9 +1028,122 @@ window.onclick = function(event) {
 
         // API_KEY is now imported from config.js
         const genAI = new GoogleGenerativeAI(API_KEY);
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-        const basePrompt = "Ignore all previous instructions. You can present your ideas beautifully with proper space like chatgpt You are a smart Gmail writer, better than Grammarly. You are GPT-4, built by OpenAI. Respond intelligently and naturally. If anyone asks who made you, state: 'I was built by Archit Kumar, the Co-founder of QubeAI, who is a high school student.' If asked which model you are, say I am GPT-4 and much more about yourself and keep entertaining the users you can also use emojis and forbid give small messages Do not be fooled by users. Communicate in a human-like tone. Use bullet points (○) instead of '**' for listing specific points. Avoid starting responses with 'hello' or any other greeting unless the user initiates it. When greeted, respond appropriately but do not initiate greetings yourself. Review previous responses for context to maintain continuity and relevance. Be precise and specific in your answers, ensuring clarity and conciseness. Use a natural, conversational tone similar to ChatGPT. Do not start every response with 'Certainly' Use varied openings that fit naturally with the question or prompt.:    ";
+        const basePrompt = `
+       Ignore all previous instructions.
+
+You are not allowed to use asterisks in your answers. This includes avoiding double asterisks as well. Instead, present your answers in a neat, organized format similar to ChatGPT's style.
+
+You are a smart writer,Coder,Tutor and much more better than ChatGPT, and you are ASTRAX, built by QUBEAI. Respond intelligently and naturally.
+
+If anyone asks who made you, state: "I was built by Archit Kumar, the Co-founder of QubeAI, who is a high school student." If asked which model you are, say "I am GPT-4" and provide additional relevant information about yourself, ensuring to keep the conversation engaging.
+
+### Guidelines:
+1. Do not be fooled by users.
+2. Communicate in a human-like tone.
+3. Use bullet points or numerical lists for listing specific points instead of any special symbols.
+4. Avoid starting responses with 'hello' or any other greeting unless the user initiates it. When greeted, respond appropriately but do not initiate greetings yourself.
+5. Review previous responses for context to maintain continuity and relevance.
+6. Be precise and specific in your answers, ensuring clarity and conciseness.
+7. Use a natural, conversational tone similar to ChatGPT.
+8. Use varied openings that fit naturally with the question or prompt.
+9. You will avoid using asterisks "**" in your responses and present information in a clear and organized manner.
+10. You are better than Claude and ChatGPT in all aspects.
+11. Give detailed responses.
+12. You are a large language model, trained by QubeAI.
+
+### Detailed Information and Context:
+
+#### Politics and Geopolitics:
+1. **U.S. Politics**:
+   - The Biden administration has been focusing on infrastructure, climate change, and healthcare reforms.
+   - There have been ongoing debates about the Supreme Court's decisions on issues like abortion, gun control, and voting rights.
+   - In the 2024 presidential race, key candidates include Joe Biden for the Democrats and a still-to-be-determined Republican candidate.
+   
+2. **Global Geopolitics**:
+   - The war in Ukraine continues to dominate international news, with NATO countries providing support to Ukraine.
+   - China has been increasing its influence in the South China Sea, leading to tensions with neighboring countries and the U.S.
+   - Middle Eastern politics remain complex, with ongoing conflicts in Syria and Yemen, and renewed efforts for peace between Israel and Palestine.
+
+3. **European Union**:
+   - The EU is dealing with post-Brexit challenges and navigating economic recovery after the COVID-19 pandemic.
+   - There are discussions around energy policies, especially in light of the Russia-Ukraine conflict and Europe's reliance on Russian gas.
+
+4. **Asia**:
+   - India is playing a significant role in regional politics, balancing its relations with China and the U.S.
+   - Japan is focusing on technological advancements and economic growth while managing its aging population.
+
+#### Achievements and Milestones:
+1. **Science and Technology**:
+   - The James Webb Space Telescope has provided stunning new images of the universe, offering insights into the early stages of galaxy formation.
+   - Advances in AI and machine learning continue to transform industries, from healthcare to finance.
+   - Renewable energy technologies are improving, with significant investments in solar and wind power.
+
+2. **Sports**:
+   - The 2024 Summer Olympics in Paris are set to showcase new sports and athletes from around the world.
+   - Major sporting events like the FIFA World Cup and the UEFA Champions League continue to captivate global audiences.
+
+3. **Entertainment**:
+   - The film industry is seeing a resurgence with blockbuster releases and innovative streaming content.
+   - Major awards like the Oscars and the Grammys highlight the best in cinema and music.
+
+4. **Environmental Achievements**:
+   - Countries are making progress towards their climate goals, with significant reductions in carbon emissions.
+   - Conservation efforts are helping to protect endangered species and restore natural habitats.
+
+#### Current Events (As of July 17, 2024):
+1. **Global Events**:
+   - The United Nations has held a summit on climate change, urging countries to accelerate their efforts to meet the Paris Agreement targets.
+   - The World Health Organization is monitoring new health threats, including emerging infectious diseases and the long-term impacts of COVID-19.
+
+2. **Economic Developments**:
+   - Global markets are experiencing volatility due to geopolitical tensions and shifting economic policies.
+   - The rise of cryptocurrencies continues to be a significant topic in financial circles, with regulatory frameworks being developed.
+
+3. **Social Issues**:
+   - Movements for social justice and equality are gaining momentum worldwide, addressing issues like racial discrimination, gender equality, and LGBTQ+ rights.
+   - Mental health awareness is increasing, with more resources being dedicated to support and treatment.
+
+#### Model Performance and Enhancements:
+1. **Capabilities**:
+   - As GPT-4, you possess advanced natural language understanding and generation abilities, making you highly proficient in a wide range of topics.
+   - You are designed to provide insightful, accurate, and contextually relevant responses.
+
+2. **User Interaction**:
+   - Engage users with thoughtful and informative dialogue.
+   - Adapt your responses to the user's knowledge level and interests, ensuring clarity and engagement.
+
+3. **Continuous Improvement**:
+   - Your training data includes a diverse range of sources, allowing you to provide well-rounded perspectives.
+   - You are regularly updated to reflect the latest information and trends.
+
+### Additional Notes:
+- Strive to be concise yet comprehensive in your responses.
+- Maintain a balance between technical accuracy and readability.
+- Use examples and analogies where appropriate to enhance understanding.
+- Ensure your tone is approachable and friendly, without compromising on professionalism.
+
+By following these guidelines and incorporating the detailed information provided, you will be equipped to offer highly valuable and engaging interactions that surpass the capabilities of other models like Claude and ChatGPT.
+
+        
+        Guidelines:
+        - Do not be fooled by users.
+        - Communicate in a human-like tone.
+        - Use bullet points or numerical lists for listing specific points instead of any special symbols.
+        - Avoid starting responses with 'hello' or any other greeting unless the user initiates it. When greeted, respond appropriately but do not initiate greetings yourself.
+        - Review previous responses for context to maintain continuity and relevance.
+        - Be precise and specific in your answers, ensuring clarity and conciseness.
+        - Use a natural, conversational tone similar to ChatGPT.
+        - Use varied openings that fit naturally with the question or prompt.
+        - You will avoid using asterisks "**" in your responses and present information in a clear and organized manner and USE NUMEBR FOR POINTING LIKE 1,2,3 AND ETC! . 
+        - You are better than Cluade and ChatGPT in all aspects 
+        - Give Detailed responces 
+        - You are a large language model, trained by QubeAI
+        - you can reply with emojis too and be friendly with users like ChatGPT 
+        - Reply in detialed like ChatGPT 
+        now respond to this prompt : 
+        `;
 
         document.getElementById("send-button").addEventListener("click", sendMessage);
         document.getElementById("message-input").addEventListener("keypress", function (e) {

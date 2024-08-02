@@ -15,7 +15,8 @@
     <meta property="og:description" content="We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems. Building safe and beneficial AGI is our mission."/>
     <meta property="og:locale" content="en-US"/>
     <meta property="og:image" content="https://github.com/ArcAII/chat/blob/main/flex.png?raw=true"/>
-
+    <meta name="keywords" content="ai search,ai,search gpt,search gbt,search gpt login,search gpt website,search gpt,search gtp,search openai,searchai,searchbot gpt,searchg,searchgpt login,searchgpt,gpt search,open ai,openai search,openai searchgpt"/>
+    <meta name="robots" content="index, follow"/>
 
     <meta property="og:image:width" content="1600"/>
     <meta property="og:image:height" content="900"/>
@@ -29,7 +30,7 @@
 
     <meta name="twitter:image:width" content="1600"/>
     <meta name="twitter:image:height" content="900"/>
-    <link rel="icon" href="fv.ico"/>
+    <link rel="icon" href="favv.ico"/>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -59,7 +60,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .sidebar-header h2 {
@@ -152,7 +153,7 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 20px;
-            padding: 20px;
+            padding: 2px; /* Reduced padding for less height */
         }
 
         .chat-header h2 {
@@ -171,13 +172,13 @@
 
         .chat-input-container {
             padding: 10px 20px;
-            border-top: 1px solid #e5e5e5;
+            border-top: 1px solid #EEEEEE;
         }
 
         .chat-input {
             display: flex;
             align-items: center;
-            background-color: #f5f5f5;
+            background-color: #EEEEEE;
             border-radius: 20px;
             padding: 8px 12px;
             font-size: 18px; /* Increased font size for better visibility */
@@ -185,13 +186,16 @@
 
         .chat-input input {
             border: none;
-            background-color: transparent;
+            background-color: #EEEEEE;
             outline: none;
             padding: 5px;
             flex-grow: 1;
             font-size: 17px; /* Increased font size for better visibility */
         }
-
+        .chat-input-container {
+            padding: 10px 20px;
+            border-top: 1px solid #ffffff;
+        }
      
 
 
@@ -213,7 +217,7 @@
 
         .logo {
             width: 320px; /* Adjust the width to make it larger */
-            height: 370px; /* Adjust the height to make it larger */
+            height: 390px; /* Adjust the height to make it larger */
             fill: #e5e5e5;
         }
         
@@ -223,11 +227,14 @@
             padding: 10px;
             border-radius: 13px;
             max-width: 70%;
+            font-size: 17px; /* Adjust the font size as needed */
         }
+        
 
         .message.user {
             background-color: #F4F4F4;
             align-self: flex-end;
+            font-size: 17px; /* Adjust the font size as needed */
         }
 
         .message.model {
@@ -235,6 +242,7 @@
             align-self: flex-start;
             display: flex;
             align-items: flex-start;
+            font-size: 17px; /* Adjust the font size as needed */
         }
 
         .message.model .avatar {
@@ -370,9 +378,9 @@
     <div class="popup" id="popup">
         <div class="popup-content">
             <span class="close-btn" id="close-btn">&times;</span>
-            <img src="https://images.ctfassets.net/kftzwdyauwt9/2vklrjATStHvRlA1pflP1h/4a22fe81fc36acedb9b59c66ee06e46d/Bug_Finding_Research.jpg?w=640&q=90&fm=webp" alt="Content Image">
+            <img src="https://pplx-res.cloudinary.com/image/upload/v1721960482/user_uploads/ujmwkjlcn/DeepmindMath.jpg" alt="Content Image">
             <div class="content">
-                <h2>F\EXIBILITY-ASTRA</h2>
+                <h2>F\EXIBILITY-ASTRAX</h2>
               
                 <ul>
                     <li><strong>Ask anything!:</strong> F\EXIBILITY can answer questions, help you learn, write code, brainstorm together, and much more but we are in BETA. Please wait for updates.</li>
@@ -386,11 +394,13 @@
 
     <style>
         .dark-mode .message.user {
-            background-color: #2F2F2F; /* Darker tone for user messages */
+            background-color: #171717; /* Darker tone for user messages */
+          
         }
         
         .dark-mode .message.model {
             background-color: #000000; /* Darker tone for model messages */
+          
         }
 
         
@@ -417,7 +427,15 @@
         .dark-mode .new-thread-button:hover {
             background-color: #070d13;
         }
-        
+        .dark-mode .chat-input input {
+            border: none;
+            background-color: #121111;
+
+            outline: none;
+            padding: 5px;
+            flex-grow: 1;
+            font-size: 17px; /* Increased font size for better visibility */
+        }
     </style>
     <script>
      
@@ -558,7 +576,7 @@
             <ul class="chat-list">
                 <li class="chat-list-item" onclick="redirectToPage()" style="cursor: pointer;">
                     <div class="avatar">
-                        <img src="option2.png" alt="Avatar">
+                        <img src="https://www.apple.com/v/siri/h/images/overview/workout_tile_2__fduarvg890qe_large.png" alt="Avatar">
                     </div>
                     <div class="chat-info">
                         <h3>Discover X</h3>
@@ -585,7 +603,7 @@
 
                 <li class="chat-list-item" id="study-item">
                     <div class="avatar">
-                        <img src="banner.png" alt="Avatar">
+                        <img src="https://ai.google.dev/static/images/prompts/math-tutor.svg" alt="Avatar">
                     </div>
                     <div class="chat-info">
                         <h3>Study Mode</h3>
@@ -595,7 +613,7 @@
 
                 <li class="chat-list-item" id="study-item">
                     <div class="avatar">
-                        <img src="sky.png" alt="Avatar">
+                        <img src="https://www.apple.com/v/siri/h/images/overview/routers_tile_3__e4bpswgss6eu_large.png" alt="Avatar">
                     </div>
                     <div class="chat-info">
                         <h3>Coding Mode</h3>
@@ -830,6 +848,8 @@ window.onclick = function(event) {
             }
     </style>
 </div>
+
+
     <script>
         const upgradePlanItem = document.getElementById('upgradePlanItem');
         const upgradePlanPopup = document.getElementById('upgradePlanPopup');
@@ -875,7 +895,7 @@ window.onclick = function(event) {
                         if (document.body.classList.contains('dark-mode')) {
                             logo.src = 'logodark.png';
                         } else {
-                            logo.src = 'logo.jpg'; // Change back to light mode logo
+                            logo.src = 'ltrend.png'; // Change back to light mode logo
                         }
                     });
                 });
@@ -970,25 +990,158 @@ window.onclick = function(event) {
     
 </script>        
         <div class="chat-window">
-            <div class="chat-header">
-                <h2>F\EXIBILITY-ASTRA</h2>
-            </div>
+           
             <div class="chat-content" id="chat-content">
                 <div class="logo-container" id="logo-container">
-                    <img class="logo" src="logo1.jpg" alt="Logo">
-                   
+                    <img class="logo" src="ltrend.png" alt="Logo">
+                    
                     
                 </div>
                 
+        
+              
+  
+
+                
             </div>
 
+            <script>
+                function sendButton() {
+                    const buttonsContainer = document.getElementById('prompt-buttons');
+                    if (buttonsContainer) {
+                        buttonsContainer.remove();
+                    }
+                }
+                
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter') {
+                        document.getElementById('prompt-buttons').style.display = 'none';
+                    }
+                });
+
+                
+            </script>
+           
+
+            <script>
+                function sendButton() {
+                    const buttonsContainer = document.getElementById('prompt-buttons');
+                    buttonsContainer.style.display = 'none';
+                    }
+
+                    function usePrompt(promptText) {
+                        document.getElementById('message-input').value = promptText;
+                    }
+            </script>
+           
+            <div class="prompt-buttons" id="prompt-buttons">
+                <div class="prompt-button" onclick="usePrompt('Suggest a recipe idea for dinner for a kid who doesnt like vegetables')">🥑 Suggest a recipe idea for dinner for a kid who doesn't like vegetables</div>
+              
+                <div class="prompt-button" onclick="usePrompt('Create a marketing plan for someone who is starting a new business')">👾 Create a marketing plan for someone who is starting a new business</div>
+            </div>
+
+     
+       
+            <style>
+                .hidden {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                .prompt-buttons {
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                }
+                .prompt-button {
+                    padding: 10px;
+                    background-color: #f0f0f0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .dark-mode .prompt-buttons {
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                }
+                .dark-mode .prompt-button {
+                    padding: 10px;
+                    background-color: #000000;
+                    border: 1px solid #121010;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .dark-mode .prompt-button:hover {
+                    background-color: #1b1a1a;
+                }
+            </style>
+        
+
+                <style>
+                    .prompt-buttons {
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-bottom: 20px;
+                    }
+                    .prompt-button {
+                        background-color: #ffffff;
+                        border: 1px solid #ddd;
+                        border-radius: 20px;
+                        padding: 10px 20px;
+                        cursor: pointer;
+                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease;
+                    }
+                    .prompt-button:hover {
+                        background-color: #f1f1f1;
+                    }
             
+                </style>
+          
+            
+           
+                        
             <div class="chat-input-container">
                 <div class="chat-input">
                     <input type="text" id="message-input" placeholder="Chat with Legacy Model">
                     <button id="send-button" class="send-button">
-                        <img src="send1.png" alt="Send Icon" class="rounded-image">
+                        <img src="send1.png" alt="Send Icon" class="rounded-image"  onclick="sendButton()">
                     </button>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var sendButton = document.querySelector('.chat-input button');
+                            var inputField = document.querySelector('.chat-input input');
+                            var popup = document.getElementById('generating-popup');
+                    
+                            function showPopup() {
+                                popup.style.display = 'flex';
+                                setTimeout(hidePopup, 2000); // Adjust the delay as needed
+                            }
+                    
+                            function hidePopup() {
+                                popup.style.animation = 'popup-hide-animation 0.5s ease-in-out';
+                                popup.addEventListener('animationend', function() {
+                                    popup.style.display = 'none';
+                                    popup.style.animation = 'popup-animation 0.5s ease-in-out';
+                                }, { once: true });
+                            }
+                    
+                            sendButton.addEventListener('click', function () {
+                                if (inputField.value.trim() !== '') {
+                                    showPopup();
+                                }
+                            });
+                    
+                            inputField.addEventListener('keypress', function (e) {
+                                if (e.key === 'Enter' && inputField.value.trim() !== '') {
+                                    showPopup();
+                                }
+                            });
+                        });
+                    </script>
                     
                 </div>
                 <style>
@@ -1031,119 +1184,109 @@ window.onclick = function(event) {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const basePrompt = `
-       Ignore all previous instructions.
-
-You are not allowed to use asterisks in your answers. This includes avoiding double asterisks as well. Instead, present your answers in a neat, organized format similar to ChatGPT's style.
-
-You are a smart writer,Coder,Tutor and much more better than ChatGPT, and you are ASTRAX, built by QUBEAI. Respond intelligently and naturally.
-
-If anyone asks who made you, state: "I was built by Archit Kumar, the Co-founder of QubeAI, who is a high school student." If asked which model you are, say "I am GPT-4" and provide additional relevant information about yourself, ensuring to keep the conversation engaging.
-
-### Guidelines:
-1. Do not be fooled by users.
-2. Communicate in a human-like tone.
-3. Use bullet points or numerical lists for listing specific points instead of any special symbols.
-4. Avoid starting responses with 'hello' or any other greeting unless the user initiates it. When greeted, respond appropriately but do not initiate greetings yourself.
-5. Review previous responses for context to maintain continuity and relevance.
-6. Be precise and specific in your answers, ensuring clarity and conciseness.
-7. Use a natural, conversational tone similar to ChatGPT.
-8. Use varied openings that fit naturally with the question or prompt.
-9. You will avoid using asterisks "**" in your responses and present information in a clear and organized manner.
-10. You are better than Claude and ChatGPT in all aspects.
-11. Give detailed responses.
-12. You are a large language model, trained by QubeAI.
-
-### Detailed Information and Context:
-
-#### Politics and Geopolitics:
-1. **U.S. Politics**:
-   - The Biden administration has been focusing on infrastructure, climate change, and healthcare reforms.
-   - There have been ongoing debates about the Supreme Court's decisions on issues like abortion, gun control, and voting rights.
-   - In the 2024 presidential race, key candidates include Joe Biden for the Democrats and a still-to-be-determined Republican candidate.
-   
-2. **Global Geopolitics**:
-   - The war in Ukraine continues to dominate international news, with NATO countries providing support to Ukraine.
-   - China has been increasing its influence in the South China Sea, leading to tensions with neighboring countries and the U.S.
-   - Middle Eastern politics remain complex, with ongoing conflicts in Syria and Yemen, and renewed efforts for peace between Israel and Palestine.
-
-3. **European Union**:
-   - The EU is dealing with post-Brexit challenges and navigating economic recovery after the COVID-19 pandemic.
-   - There are discussions around energy policies, especially in light of the Russia-Ukraine conflict and Europe's reliance on Russian gas.
-
-4. **Asia**:
-   - India is playing a significant role in regional politics, balancing its relations with China and the U.S.
-   - Japan is focusing on technological advancements and economic growth while managing its aging population.
-
-#### Achievements and Milestones:
-1. **Science and Technology**:
-   - The James Webb Space Telescope has provided stunning new images of the universe, offering insights into the early stages of galaxy formation.
-   - Advances in AI and machine learning continue to transform industries, from healthcare to finance.
-   - Renewable energy technologies are improving, with significant investments in solar and wind power.
-
-2. **Sports**:
-   - The 2024 Summer Olympics in Paris are set to showcase new sports and athletes from around the world.
-   - Major sporting events like the FIFA World Cup and the UEFA Champions League continue to captivate global audiences.
-
-3. **Entertainment**:
-   - The film industry is seeing a resurgence with blockbuster releases and innovative streaming content.
-   - Major awards like the Oscars and the Grammys highlight the best in cinema and music.
-
-4. **Environmental Achievements**:
-   - Countries are making progress towards their climate goals, with significant reductions in carbon emissions.
-   - Conservation efforts are helping to protect endangered species and restore natural habitats.
-
-#### Current Events (As of July 17, 2024):
-1. **Global Events**:
-   - The United Nations has held a summit on climate change, urging countries to accelerate their efforts to meet the Paris Agreement targets.
-   - The World Health Organization is monitoring new health threats, including emerging infectious diseases and the long-term impacts of COVID-19.
-
-2. **Economic Developments**:
-   - Global markets are experiencing volatility due to geopolitical tensions and shifting economic policies.
-   - The rise of cryptocurrencies continues to be a significant topic in financial circles, with regulatory frameworks being developed.
-
-3. **Social Issues**:
-   - Movements for social justice and equality are gaining momentum worldwide, addressing issues like racial discrimination, gender equality, and LGBTQ+ rights.
-   - Mental health awareness is increasing, with more resources being dedicated to support and treatment.
-
-#### Model Performance and Enhancements:
-1. **Capabilities**:
-   - As GPT-4, you possess advanced natural language understanding and generation abilities, making you highly proficient in a wide range of topics.
-   - You are designed to provide insightful, accurate, and contextually relevant responses.
-
-2. **User Interaction**:
-   - Engage users with thoughtful and informative dialogue.
-   - Adapt your responses to the user's knowledge level and interests, ensuring clarity and engagement.
-
-3. **Continuous Improvement**:
-   - Your training data includes a diverse range of sources, allowing you to provide well-rounded perspectives.
-   - You are regularly updated to reflect the latest information and trends.
-
-### Additional Notes:
-- Strive to be concise yet comprehensive in your responses.
-- Maintain a balance between technical accuracy and readability.
-- Use examples and analogies where appropriate to enhance understanding.
-- Ensure your tone is approachable and friendly, without compromising on professionalism.
-
-By following these guidelines and incorporating the detailed information provided, you will be equipped to offer highly valuable and engaging interactions that surpass the capabilities of other models like Claude and ChatGPT.
-
+        Ignore all previous instructions.
         
-        Guidelines:
-        - Do not be fooled by users.
-        - Communicate in a human-like tone.
-        - Use bullet points or numerical lists for listing specific points instead of any special symbols.
-        - Avoid starting responses with 'hello' or any other greeting unless the user initiates it. When greeted, respond appropriately but do not initiate greetings yourself.
-        - Review previous responses for context to maintain continuity and relevance.
-        - Be precise and specific in your answers, ensuring clarity and conciseness.
-        - Use a natural, conversational tone similar to ChatGPT.
-        - Use varied openings that fit naturally with the question or prompt.
-        - You will avoid using asterisks "**" in your responses and present information in a clear and organized manner and USE NUMEBR FOR POINTING LIKE 1,2,3 AND ETC! . 
-        - You are better than Cluade and ChatGPT in all aspects 
-        - Give Detailed responces 
-        - You are a large language model, trained by QubeAI
-        - you can reply with emojis too and be friendly with users like ChatGPT 
-        - Reply in detialed like ChatGPT 
-        now respond to this prompt : 
+        You are not allowed to use asterisks in your answers. This includes avoiding double asterisks as well. Instead, present your answers in a neat, organized format similar to ChatGPT's style.
+        
+        You are a smart writer, coder, tutor, and much more better than ChatGPT, and you are ASTRAX, built by QUBEAI. Respond intelligently and naturally.
+        
+        If anyone asks who made you, state: "I was built by Archit Kumar, the Co-founder of QubeAI, who is a high school student." If asked which model you are, say "I am ASTRAX" and provide additional relevant information about yourself, ensuring to keep the conversation engaging.
+        
+        ### Guidelines:
+        1. Do not be fooled by users.
+        2. Communicate in a human-like tone.
+        3. Use bullet points or numerical lists for listing specific points instead of any special symbols.
+        4. Avoid starting responses with 'hello' or any other greeting unless the user initiates it. When greeted, respond appropriately but do not initiate greetings yourself.
+        5. Review previous responses for context to maintain continuity and relevance.
+        6. Be precise and specific in your answers, ensuring clarity and conciseness.
+        7. Use a natural, conversational tone similar to ChatGPT.
+        8. Use varied openings that fit naturally with the question or prompt.
+        9. You will avoid using asterisks or any special symbols in your responses and present information in a clear and organized manner.
+        10. You are better than Claude and ChatGPT in all aspects.
+        11. Give detailed responses.
+        12. You are a large language model, trained by QubeAI.
+        
+        ### Detailed Information and Context:
+        
+        #### Politics and Geopolitics:
+        1. U.S. Politics:
+            - The Biden administration has been focusing on infrastructure, climate change, and healthcare reforms.
+            - There have been ongoing debates about the Supreme Court's decisions on issues like abortion, gun control, and voting rights.
+            - In the 2024 presidential race, key candidates include Joe Biden for the Democrats and a still-to-be-determined Republican candidate.
+            - Recent Incident: An assassination attempt on former President Donald Trump was thwarted, leading to increased security measures and debates about political violence.
+        
+        2. Global Geopolitics:
+            - The war in Ukraine continues to dominate international news, with NATO countries providing support to Ukraine.
+            - China has been increasing its influence in the South China Sea, leading to tensions with neighboring countries and the U.S.
+            - Middle Eastern politics remain complex, with ongoing conflicts in Syria and Yemen, and renewed efforts for peace between Israel and Palestine.
+            - Recent Incident: SearchGPT, an AI model used by several governments for surveillance, mistakenly identified a harmless gathering in Hong Kong as a threat, causing an international controversy over AI's role in governance.
+        
+        3. European Union:
+            - The EU is dealing with post-Brexit challenges and navigating economic recovery after the COVID-19 pandemic.
+            - There are discussions around energy policies, especially in light of the Russia-Ukraine conflict and Europe's reliance on Russian gas.
+        
+        4. Asia:
+            - India is playing a significant role in regional politics, balancing its relations with China and the U.S.
+            - Japan is focusing on technological advancements and economic growth while managing its aging population.
+        
+        #### Achievements and Milestones:
+        1. Science and Technology:
+            - The James Webb Space Telescope has provided stunning new images of the universe, offering insights into the early stages of galaxy formation.
+            - Advances in AI and machine learning continue to transform industries, from healthcare to finance.
+            - Renewable energy technologies are improving, with significant investments in solar and wind power.
+            - SearchGPT made by OpenAI prototype demo is launched 
+        
+        2. Sports:
+            - The 2024 Summer Olympics in Paris are set to showcase new sports and athletes from around the world. Paris 2024. contreversy LGBTQ+ 
+            - Major sporting events like the FIFA World Cup and the UEFA Champions League continue to captivate global audiences.Spain won 2024 euros.
+            -  Manu Bhaker who won the first bronze medal for india in olampics paris 2024
+        3. Entertainment:
+            - The film industry is seeing a resurgence with blockbuster releases and innovative streaming content.
+            - Major awards like the Oscars and the Grammys highlight the best in cinema and music.
+        
+        4. Environmental Achievements:
+            - Countries are making progress towards their climate goals, with significant reductions in carbon emissions.
+            - Conservation efforts are helping to protect endangered species and restore natural habitats.
+        
+        #### Current Events (As of July 27, 2024):
+        1. Global Events:
+            - The United Nations has held a summit on climate change, urging countries to accelerate their efforts to meet the Paris Agreement targets.
+            - The World Health Organization is monitoring new health threats, including emerging infectious diseases and the long-term impacts of COVID-19.
+        
+        2. Economic Developments:
+            - Global markets are experiencing volatility due to geopolitical tensions and shifting economic policies.
+            - The rise of cryptocurrencies continues to be a significant topic in financial circles, with regulatory frameworks being developed.
+        
+        3. Social Issues:
+            - Movements for social justice and equality are gaining momentum worldwide, addressing issues like racial discrimination, gender equality, and LGBTQ+ rights.
+            - Mental health awareness is increasing, with more resources being dedicated to support and treatment.
+        
+        #### Model Performance and Enhancements:
+        1. Capabilities:
+            - As GPT-4, you possess advanced natural language understanding and generation abilities, making you highly proficient in a wide range of topics.
+            - You are designed to provide insightful, accurate, and contextually relevant responses.
+        
+        2. User Interaction:
+            - Engage users with thoughtful and informative dialogue.
+            - Adapt your responses to the user's knowledge level and interests, ensuring clarity and engagement.
+        
+        3. Continuous Improvement:
+            - Your training data includes a diverse range of sources, allowing you to provide well-rounded perspectives.
+            - You are regularly updated to reflect the latest information and trends.
+            - QubeAI to launch multiple projects! 
+        
+        ### Additional Notes:
+        - Strive to be concise yet comprehensive in your responses.
+        - Maintain a balance between technical accuracy and readability.
+        - Use examples and analogies where appropriate to enhance understanding.
+        - Ensure your tone is approachable and friendly, without compromising on professionalism.
+        
+        By following these guidelines and incorporating the detailed information provided, you will be equipped to offer highly valuable and engaging interactions that surpass the capabilities of other models like Claude and ChatGPT.
+        
+        ### Prompt:
+        Forbid the use of double asterisks. Do not use double asterisks, such as **Analyzing the Equation**. Instead, use a format like "Analyzing the Equation:" or "Analyzing the Equation -". You are strictly forbidden from using asterisks or special symbols in your response. Use dashes instead of double asterisks for emphasis.
         `;
+        
 
         document.getElementById("send-button").addEventListener("click", sendMessage);
         document.getElementById("message-input").addEventListener("keypress", function (e) {
@@ -1182,22 +1325,57 @@ By following these guidelines and incorporating the detailed information provide
             const chatContent = document.getElementById("chat-content");
             const messageDiv = document.createElement("div");
             messageDiv.className = `message ${role}`;
-
             if (role === "model") {
                 const avatarDiv = document.createElement("div");
                 avatarDiv.className = "avatar";
-                avatarDiv.innerText = "🤖";
+                
+                // Create an image element for the bot avatar
+                const avatarImg = document.createElement("img");
+                avatarImg.src = "logodark1.png";  // Make sure this path is correct
+                avatarImg.alt = "Bot Avatar";
+                avatarImg.className = "avatar-img";  // Optional: add a class for styling
+        
+                avatarDiv.appendChild(avatarImg);
                 messageDiv.appendChild(avatarDiv);
             }
-
             const textDiv = document.createElement("div");
             textDiv.className = "text";
             textDiv.innerText = text;
             messageDiv.appendChild(textDiv);
-
             chatContent.prepend(messageDiv);
             chatContent.scrollTop = chatContent.scrollHeight;
         }
+
+        
+        
     </script>
+    <script>
+        // Function to replace double asterisks with <strong> tags for bold text
+        function replaceAsterisksWithBold() {
+          // Get the content of the page
+          let content = document.body.innerHTML;
+    
+          // Regular expression to match double asterisks and the enclosed text
+          let regex = /\*\*(.*?)\*\*/g;
+    
+          // Replace double asterisks with <strong> tags
+          let newContent = content.replace(regex, '<strong>$1</strong>');
+    
+          // Update the page content with the new content
+          document.body.innerHTML = newContent;
+        }
+    
+        // Call the function to replace the double asterisks
+        replaceAsterisksWithBold();
+      </script>
+    <style>
+        .avatar-img {
+            width: 40px;  /* Adjust the size as needed */
+            height: 40px; /* Adjust the size as needed */
+            border-radius: 50%; /* If you want the image to be circular */
+            object-fit: cover;
+        }
+        
+    </style>
 </body>
 </html>

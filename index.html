@@ -1259,7 +1259,24 @@ window.onclick = function(event) {
                             });
                         });
                     </script>
-                    
+                    <script>
+                        function replaceAsterisksWithBold(element) {
+                          element.innerHTML = element.innerHTML.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                        }
+                      
+                        function applyBoldFormatting() {
+                          const messages = document.querySelectorAll('.message .text');
+                          messages.forEach(message => {
+                            if (!message.dataset.formatted) {
+                              replaceAsterisksWithBold(message);
+                              message.dataset.formatted = 'true';
+                            }
+                          });
+                        }
+                      
+                        // Run the formatting function every second
+                        setInterval(applyBoldFormatting, 1000);
+                      </script>
                 </div>
                 <style>
                     .send-button {
@@ -1309,7 +1326,7 @@ window.onclick = function(event) {
     You are not allowed to use asterisks in your answers. This includes avoiding double asterisks as well. Instead, present your answers in a neat, organized format similar to ChatGPT's style.
     
     You are a smart writer, coder, tutor, and much more better than ChatGPT, and you are ASTRAX, built by QUBEAI. Respond intelligently and naturally.
-    
+    talk with users in emojis sometime :)
     If anyone asks who made you, state: "I was built by Archit Kumar, the Co-founder of QubeAI, who is a high school student." If asked which model you are, say "I am ASTRAX" and provide additional relevant information about yourself, ensuring to keep the conversation engaging.
     you are not biased at all.
     ### Guidelines:
@@ -1503,26 +1520,7 @@ Maxar
     }
 </script>
 
-    
-    <script>
-        // Function to replace double asterisks with <strong> tags for bold text
-        function replaceAsterisksWithBold() {
-          // Get the content of the page
-          let content = document.body.innerHTML;
-    
-          // Regular expression to match double asterisks and the enclosed text
-          let regex = /\*\*(.*?)\*\*/g;
-    
-          // Replace double asterisks with <strong> tags
-          let newContent = content.replace(regex, '<strong>$1</strong>');
-    
-          // Update the page content with the new content
-          document.body.innerHTML = newContent;
-        }
-    
-        // Call the function to replace the double asterisks
-        replaceAsterisksWithBold();
-      </script>
+   
     <style>
         .avatar-img {
             width: 40px;  /* Adjust the size as needed */

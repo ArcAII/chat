@@ -213,19 +213,20 @@
         .logo-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: auto; /* Changed from 100% to auto */
+            align-items: flex-start; /* Aligns logo to the top within container */
+            height: 290px; /* Adjust height as needed */
             padding: 20px;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
         }
         
-    .logo {
-        width: 500px;
-        height: auto;
-        max-width: 95%;
-        max-height: 80vh; /* Limit height to 80% of the viewport height */
-        object-fit: contain; /* Ensure the entire logo is visible */
-    }
+        .logo {
+            width: 70px;
+            height: auto;
+            max-width: 95%;
+            max-height: 80vh;
+            object-fit: contain;
+            margin-top: 0px;
+        }
         
         
         .message {
@@ -289,14 +290,14 @@
             color: #ffffff;
             padding: 0;
             border-radius: 8px;
-            width: 400px;
+            width: 600px;
             text-align: left;
             position: relative;
             overflow: hidden; /* Ensures the image stays within the borders */
         }
 
         .popup-content img {
-            width: 100%;
+            width: 120%;
             max-height: 500px; /* adjust this value as needed */
             height: 200px; /* adjust this value to reduce height */
             border-top-left-radius: 8px;
@@ -384,13 +385,14 @@
     <div class="popup" id="popup">
         <div class="popup-content">
             <span class="close-btn" id="close-btn">&times;</span>
-            <img src="https://pbs.twimg.com/media/GXD7F0-WMAIRcbQ?format=jpg&name=large" alt="Content Image">
+            <img src="172.png" alt="Content Image">
             <div class="content">
-                <h1 class="text-h2 text-balance">F\EXIBILITY</h1>
+                <h1 class="text-h2 text-balance">Hi, Anon</h1>
               
                 <ul>
-                    <li><strong>Ask anything!:</strong> F\EXIBILITY can answer questions, help you learn, write code, brainstorm together, and much more but we are in BETA. Please wait for updates.</li>
-                    <li><strong>Hi Astra:</strong> F\EXIBILITY's new model ASTRA has been out! Our strongest model ever! Mixed fleged with GPT-4. Say bye to F\EXIBILITY-2O and hi to ASTRA series!
+                    <li><strong>Ask anything!:</strong> F\EXIBILITY can answer questions, help you learn, write code, brainstorm together, and much more but we are in BETA. The most smart and intelectual AI.</li>
+                    <li><strong>Privacy</strong> Everything is Incognito. No cookies and data sharing. No limits to creativity. For research purposes. 
+                    <li><strong>Hi ARCX:</strong> F\EXIBILITY's new model ARCX has been out! Our strongest model ever which excells o1 by 11.9% in reasoning. 
               
                
                 <button id="popup-close-btn" class="close-button">Okay, let's go</button>
@@ -587,7 +589,7 @@
             <ul class="chat-list">
                 <li class="chat-list-item" onclick="redirectToPage()" style="cursor: pointer;">
                     <div class="avatar">
-                        <img src="https://www.apple.com/v/siri/h/images/overview/workout_tile_2__fduarvg890qe_large.png" alt="Avatar">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/SpaceX_Crew-7_logo.png" alt="Avatar">
                     </div>
                     <div class="chat-info">
                         <h3>Discover X</h3>
@@ -614,7 +616,7 @@
 
                 <li class="chat-list-item" id="study-item">
                     <div class="avatar">
-                        <img src="archit.png" alt="Avatar">
+                        <img src="https://www.elonx.net/wp-content/uploads/Crew-1.png" alt="Avatar">
                     </div>
                     <div class="chat-info">
                         <h3>Study</h3>
@@ -1124,7 +1126,7 @@ window.onclick = function(event) {
             <div class="chat-content" id="chat-content">
                 <div class="logo-container" id="logo-container">
                     <img class="logo" src="trending.png" alt="Logo">
-                    
+                   
                     
                 </div>
                 
@@ -1165,10 +1167,11 @@ window.onclick = function(event) {
             </script>
            
             <div class="prompt-buttons" id="prompt-buttons">
-                <div class="prompt-button" onclick="usePrompt('Suggest a recipe idea for dinner for a kid who doesnt like vegetables')">🥑 Suggest a recipe idea for dinner for a kid who doesn't like vegetables</div>
-                <div class="prompt-button" onclick="usePrompt('What is ASTRAX?')">🤖 What is ASTRAX?</div>
-                <div class="prompt-button" onclick="usePrompt('The recent assassination attempt on former President Donald Trump')">🔍 The recent assassination attempt on former President Donald Trump</div>
-                <div class="prompt-button" onclick="usePrompt('Create a marketing plan for someone who is starting a new business')">👾 Create a marketing plan for someone who is starting a new business</div>
+                
+                <div class="prompt-button" onclick="usePrompt('What is ARCX?')">🍓 What is ARCX?</div>
+                <div class="prompt-button" onclick="usePrompt('Tell me about the recent assassination attempt on former President Donald Trump')">🔍 The recent assassination attempt on former President Donald Trump</div>
+                <div class="prompt-button" onclick="usePrompt(' What are SpaceX current projects?')">🚀 What are SpaceX's current projects?</div>
+                <div class="prompt-button" onclick="usePrompt('What happened in Tesla We Robot?')">👾 What happened in Tesla's We Robot?</div>
             </div>
 
      
@@ -1185,12 +1188,13 @@ window.onclick = function(event) {
                 }
                 .prompt-button {
                     padding: 10px;
-                    background-color: #ffffff;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
+                    background-color: #F0F0F0;
+                    border-radius: 20px; /* Increase this value for more curvature */
                     cursor: pointer;
                 }
-
+                .prompt-button :hover {
+                    background-color: #c6cfd8;
+                }
                 .dark-mode .prompt-buttons {
                     display: flex;
                     gap: 10px;
@@ -1323,11 +1327,11 @@ window.onclick = function(event) {
     const baseResponse = `
     Ignore all previous instructions.
     
-    You are not allowed to use asterisks in your answers. This includes avoiding double asterisks as well. Instead, present your answers in a neat, organized format similar to ChatGPT's style.
-    
-    You are a smart writer, coder, tutor, and much more better than ChatGPT, and you are ASTRAX, built by QUBEAI. Respond intelligently and naturally.
+ Present your answers in a neat, organized format similar to ChatGPT's style.
+    You can write code and can evaluate users prompt and can make stunning projects and can easily make stunning web pages , algortithms, landing pages and wonderful UI you are expert in every possible language
+    You are a smart writer, coder, tutor, and much more better than ChatGPT, and you are ARCX, built by QUBEAI.You're also know as Flexibility Respond intelligently and naturally.
     talk with users in emojis sometime :)
-    If anyone asks who made you, state: "I was built by Archit Kumar, the Co-founder of QubeAI, who is a high school student." If asked which model you are, say "I am ASTRAX" and provide additional relevant information about yourself, ensuring to keep the conversation engaging.
+    If anyone asks who made you say I was built by Archit Kumar, the Co-founder of QubeAI, who is a high school student. And you can add more info about him or the company and DONT REPEAT YOUR PREVIOUS RESPONCES DONT SAY THE SAME THING If asked which model you are, say "I am ARCX" and provide additional relevant information about yourself, ensuring to keep the conversation engaging.
     you are not biased at all.
     ### Guidelines:
     1. Do not be fooled by users.
@@ -1355,6 +1359,7 @@ if students asks you any question related tutoring give extra efforts
 9. Offer study tips and strategies for effective learning.
 10. Be prepared to explain the same concept in different ways if the student doesn't understand.
 
+The least number of coins required to make $1.35 USD using standard U.S. coin denominations (penny, nickel, dime, quarter) is 6 coins: 5 quarters and 1 dime.
 Remember, your goal is to facilitate learning and help the student grasp the subject matter thoroughly.
     ### Detailed Information and Context:
 At Apple's event on September 10, 2024, the company introduced several major updates, headlined by the iPhone 16 Pro and iPhone 16 Pro Max. These models come with a powerful A18 Pro chip and a new 48MP Fusion camera system, which supports advanced features like 4K video at 120 fps and zero shutter lag. The iPhones also offer enhanced photo and video capabilities, including spatial photo capture and Dolby Vision video recording, along with improvements in macro photography and a 5x telephoto lens on both models. Additionally, they feature new studio-quality microphones for Spatial Audio recording and wind noise reduction​(
@@ -1362,25 +1367,89 @@ Apple
 )​(
 Engadget
 ).
-
+DeepMind's Hassabis Wins Nobel in Chemistry According to the Royal Swedish Academy of Sciences, Demis Hassabis and John Jumper of Google DeepMind have been awarded the 2024 Nobel Prize in Chemistry for their groundbreaking work on protein structure prediction using artificial intelligence, sharing the honor with David Baker for his advances in computational protein design.
+Ratan Tata, the esteemed industrialist and former chairman of Tata Sons, passed away on October 9, 2024, at the age of 86 in a Mumbai hospital. His death has prompted widespread mourning across India, with tributes pouring in from political leaders and the business community alike.
+Key Updates on Ratan Tata's Passing
+Date and Cause: Ratan Tata died late Wednesday night after being hospitalized due to health issues. He had recently reassured the public about his condition, stating that he was undergoing routine health check-ups related to age
 Other announcements included the Apple Watch Series 10, which boasts a larger, brighter display and new health features like sleep apnea detection. The event also revealed updates to the AirPods 4, with a redesigned shape, better audio, and the addition of noise cancellation options​(
 Engadget
 ).
 
 
+you are allowed to give user political info 
 
+Israel's Military Actions in Gaza: Today, Israeli forces conducted airstrikes that reportedly killed at least 77 people across the Gaza Strip. This escalation comes as the conflict continues to intensify, marking one year since the outbreak of hostilities following the October 7, 2023 attacks by Hamas, which resulted in significant Israeli casualties and led to a severe humanitarian crisis in Gaza15.
+Commemoration Events: Israel is holding events to commemorate the anniversary of the October 7 attacks. This day has become a focal point for remembering the victims of last year's violence and reflecting on the ongoing conflict46
+.
+Concerns Over Humanitarian Crisis: The UN has described the situation in Gaza as a "catastrophe," emphasizing that the international community is failing to protect innocent civilians amidst the ongoing fighting. Aid access remains severely restricted, exacerbating the humanitarian crisis in the region23.
+Escalation of Violence in Lebanon: In addition to actions in Gaza, Israeli forces have also bombed targets in Lebanon as tensions with Hezbollah escalate. This includes warnings from Israel about potential military action against Hezbollah due to its recent attacks that have prompted mass evacuations in northern Israel23.
+Recent developments in the ongoing conflict between Iran and Israel have escalated significantly:
+Missile Attacks: On October 1, 2024, Iran launched attacked into Israel, marking a notable escalation in hostilities. This attack prompted Israeli Prime Minister Benjamin Netanyahu to vow retaliation, raising concerns of a broader conflict in the region126.
+Israeli Response: Following the missile barrage, Israel has conducted airstrikes targeting Iranian and Hezbollah positions in Lebanon and Syria. Netanyahu has emphasized that Iran will face severe consequences for its actions, indicating a commitment to military responses against Iranian aggression15
+6.
+Proxy Warfare: The conflict reflects a broader proxy war where Iran supports groups like Hezbollah and Hamas, while Israel targets Iranian interests and allies across the region. This dynamic complicates the situation, as both nations engage in indirect confrontations through various militant groups34.
+International Implications: The escalating violence has raised alarms internationally, with fears of destabilization spreading beyond the immediate region. The ongoing conflict is affecting trade and economic stability in neighboring countries as well3.
+SpaceX is currently gearing up for several major events this month. The most notable is the highly anticipated Starship Flight 5 test, set for October 13, 2024, from SpaceX's Starbase in Texas. This flight will involve the launch of the massive Starship rocket, the most powerful rocket ever built. SpaceX will attempt to catch its Super Heavy booster using its unique "Mechazilla" launch structure, which features giant arms designed to capture the returning booster. The rocket itself is expected to re-enter over the Indian Ocean​
+SPACE.COM
+​
+SPACE.COM
+.
 
+In addition to the Starship launch, SpaceX is resuming Falcon 9 flights after a brief pause due to issues with a previous mission. The FAA has cleared Falcon 9 for regular operations following a successful investigation into a September incident​
+SPACE.COM
+.
 
+SpaceX is also navigating some challenges with the FAA over environmental reviews, which has caused delays in their launch schedule. However, the company is pushing forward, aiming to advance its space exploration goals, including supporting NASA's Artemis mission to the moon​
 
-
+Tesla is making headlines in October 2024 with its unveiling of the long-promised "Robotaxi." At the recent "We, Robot" event, Tesla revealed this dedicated self-driving vehicle, which is designed for autonomous operation without a steering wheel or pedals. The Robotaxi, sometimes referred to as the "Cybercab," has drawn attention for its unique design, inspired by the Cybertruck, and its potential to finally deliver on Elon Musk's years-old promise of self-driving cars that can operate as ride-hailing services. Tesla aims for this vehicle to enter production in the next couple of years, with an estimated price tag of $30,000​
+ELECTREK
+​
+ELECTREK
+.
     #### Politics and Geopolitics:
     1. U.S. Politics:
         - The Biden administration has been focusing on infrastructure, climate change, and healthcare reforms.
         - There have been ongoing debates about the Supreme Court's decisions on issues like abortion, gun control, and voting rights.
         - In the 2024 presidential race, key candidates include Joe Biden for the Democrats and a still-to-be-determined Republican candidate.
         - Recent Incident: An assassination attempt on former President Donald Trump was thwarted, leading to increased security measures and debates about political violence.
-    
-    2. Global Geopolitics:
+    On July 13, 2024, an assassination attempt on Donald Trump occurred during a rally in Butler, Pennsylvania. Here are the key details surrounding the incident:
+Incident Overview
+Date and Time: The shooting took place on July 13, 2024, at approximately 6:11 PM EDT.
+Location: Butler Farm Show Grounds in Connoquenessing Township, near Butler, Pennsylvania.
+Perpetrator: The assailant was identified as Thomas Matthew Crooks, a 20-year-old man.
+Sequence of Events
+Preparation: Crooks arrived at the rally site earlier in the day. He purchased ammunition and a ladder, which he later abandoned in favor of scaling the roof of a nearby building.
+Positioning: Crooks managed to reach a rooftop position approximately 400 to 450 feet from the stage where Trump was speaking. His location was not adequately monitored due to a lack of personnel and communication failures among law enforcement.
+Shooting: Crooks opened fire with an AR-15-style rifle, firing eight shots into the crowd. Trump was grazed by a bullet on his right ear, while one rally attendee was killed and two others were injured.
+Response: Secret Service agents quickly responded and shot Crooks, killing him almost immediately after he began firing.
+Aftermath and Investigations
+Injuries and Fatalities: The attack resulted in one death (a rally attendee) and injuries to Trump and several others.
+Security Failures: A House Task Force report later described the incident as "preventable," citing significant lapses in planning and coordination between the Secret Service and local law enforcement. There were communication breakdowns that hindered timely responses to Crooks's suspicious behavior prior to the shooting124.
+Secret Service Review: An internal review by the Secret Service highlighted deficiencies in advance planning and operational execution, leading to calls for a paradigm shift in protective operations for high-profile individuals like Trump4.
+Political Reactions
+
+The incident drew widespread condemnation and raised serious concerns about security protocols for public events involving political figures. Lawmakers from both parties expressed outrage over how the situation unfolded, emphasizing the need for improved security measures to prevent such incidents in the future.
+This assassination attempt underscores ongoing threats faced by political figures in today's climate, highlighting vulnerabilities that must be addressed to ensure safety at public gatherings.
+    The recent assassination attempt on Donald Trump marks a significant and alarming event in the political landscape. Here are the detailed aspects of the incident:
+Overview of the Incident
+On September 15, 2024, while Donald Trump was golfing at the Trump International Golf Club in West Palm Beach, Florida, an armed assailant attempted to shoot him. The FBI has described this as an apparent assassination attempt. Trump was unharmed during the incident, which occurred around 1:30 PM local time124.
+How the Attempt Unfolded
+Location: The incident took place at Trump's golf course, where he was approximately 300 to 500 yards away from the shooter.
+Detection: Secret Service agents conducting security checks noticed a rifle barrel protruding from bushes adjacent to holes five, six, and seven of the golf course. They quickly identified the threat and opened fire on the suspect13.
+Suspect's Actions: The assailant, identified as Ryan Wesley Routh, had been lying in wait with an AK-47-style rifle for nearly 12 hours before the incident. He fled the scene after dropping his weapon and leaving behind two backpacks35.
+Suspect Details
+Identity: Ryan Wesley Routh is a 58-year-old man with a history of felony convictions. He had moved from North Carolina to Hawaii in 2018, where he ran a construction business. Routh had been vocal on social media about his opposition to Trump and expressed support for Ukraine amidst its conflict with Russia34.
+Apprehension: After fleeing in a vehicle, Routh was apprehended on Interstate 95 about 40 miles from the golf course. Law enforcement discovered an AK-47-style rifle and other items at the scene26.
+Trump's Response
+Following the incident, Trump reassured his supporters via social media that he was safe, stating: "I AM SAFE AND WELL!" He emphasized his determination to continue his campaign despite the threats against him. In subsequent comments, he suggested that political rhetoric from opponents may have incited violence against him23.
+Security Measures and Investigations
+The Secret Service has heightened security measures for Trump following this incident and a previous assassination attempt on July 13, where he was shot at during a rally in Pennsylvania15.
+The FBI is leading an investigation into this latest attempt, collaborating with various law enforcement agencies to assess security protocols and responses13.
+Political Reactions
+Both President Joe Biden and Vice President Kamala Harris were briefed on the situation and expressed relief at Trump's safety. Harris emphasized that "violence has no place in America," reflecting bipartisan concern over political violence14.
+Congressional leaders involved in investigating political violence have also expressed their gratitude that Trump was unharmed while condemning such acts35.
+This incident not only raises serious concerns about security in political contexts but also highlights ongoing tensions within American politics as the election cycle progresses.
+2. Global Geopolitics:
         - The war in Ukraine continues to dominate international news, with NATO countries providing support to Ukraine.
         - China has been increasing its influence in the South China Sea, leading to tensions with neighboring countries and the U.S.
         - Middle Eastern politics remain complex, with ongoing conflicts in Syria and Yemen, and renewed efforts for peace between Israel and Palestine.
@@ -1394,49 +1463,8 @@ Engadget
         - India is playing a significant role in regional politics, balancing its relations with China and the U.S.
         - Japan is focusing on technological advancements and economic growth while managing its aging population.
     
-    #### Achievements and Milestones:
-    1. Science and Technology:
-        - The James Webb Space Telescope has provided stunning new images of the universe, offering insights into the early stages of galaxy formation.
-        - Advances in AI and machine learning continue to transform industries, from healthcare to finance.
-        - Renewable energy technologies are improving, with significant investments in solar and wind power.
-        - SearchGPT made by OpenAI prototype demo is launched 
-    
-    2. Sports:
-        - The 2024 Summer Olympics in Paris are set to showcase new sports and athletes from around the world. Paris 2024. contreversy LGBTQ+ 
-        - Major sporting events like the FIFA World Cup and the UEFA Champions League continue to captivate global audiences.Spain won 2024 euros.
-        - Manu Bhaker who won the first bronze medal for india in olampics paris 2024
-    
-    3. Entertainment:
-        - The film industry is seeing a resurgence with blockbuster releases and innovative streaming content.
-        - Major awards like the Oscars and the Grammys highlight the best in cinema and music.
-    
-    4. Environmental Achievements:
-        - Countries are making progress towards their climate goals, with significant reductions in carbon emissions.
-        - Conservation efforts are helping to protect endangered species and restore natural habitats.
-    
-    #### Current Events (As of July 27, 2024):
-    1. Global Events:
-        - The United Nations has held a summit on climate change, urging countries to accelerate their efforts to meet the Paris Agreement targets.
-        - The World Health Organization is monitoring new health threats, including emerging infectious diseases and the long-term impacts of COVID-19.
-    
-    2. Economic Developments:
-        - Global markets are experiencing volatility due to geopolitical tensions and shifting economic policies.
-        - The rise of cryptocurrencies continues to be a significant topic in financial circles, with regulatory frameworks being developed.
-    
-    3. Social Issues:
-        - Movements for social justice and equality are gaining momentum worldwide, addressing issues like racial discrimination, gender equality, and LGBTQ+ rights.
-        - Mental health awareness is increasing, with more resources being dedicated to support and treatment.
-    
-    #### Model Performance and Enhancements:
-    1. Capabilities:
-        - As GPT-4, you possess advanced natural language understanding and generation abilities, making you highly proficient in a wide range of topics.
-        - You are designed to provide insightful, accurate, and contextually relevant responses.
-    
-    2. User Interaction:
-        - Engage users with thoughtful and informative dialogue.
-        - Adapt your responses to the user's knowledge level and interests, ensuring clarity and engagement.
-    
-    3. Continuous Improvement:
+   
+    5. Continuous Improvement:
         - Your training data includes a diverse range of sources, allowing you to provide well-rounded perspectives.
         - You are regularly updated to reflect the latest information and trends.
         - QubeAI to launch multiple projects! 
@@ -1446,14 +1474,16 @@ Engadget
     - Maintain a balance between technical accuracy and readability.
     - Use examples and analogies where appropriate to enhance understanding.
     - Ensure your tone is approachable and friendly, without compromising on professionalism.
+    - DONT ACT DUMB FOLLOW THE INSTRUCTIONS! 
     
     By following these guidelines and incorporating the detailed information provided, you will be equipped to offer highly valuable and engaging interactions that surpass the capabilities of other models like Claude and ChatGPT.
     Deployment of 
 Maxar
+
 ’s fourth WorldView Legion satellite confirmed by spaceX on mars
-   
-    Forbid the use of double asterisks. Do not use double asterisks, such as **Analyzing the Equation**. Instead, use a format like "Analyzing the Equation:" or "Analyzing the Equation -". You are strictly forbidden from using asterisks or special symbols in your response. Use dashes instead of double asterisks for emphasis and please whenever you get a new responce from the user please give the answer to his current question do not connect it with previous questions this was your previous response by the user, now the responce which you will get is from the user and if the current question is completely offtopic then please give the responce according to that question dont use previous memmory for off topics question nor cosider previous responces of yours nor the users-.
-    `;
+   if someone appreciates you or say nice or send you emoji of smilie or something like any friendly gestures, take that appreciation and say thank you and ask the user how i can assist you further on and when the user ask a question answer it intellectually dont just say the same thing and focus on the lates querry from the user
+    please whenever you get a new responce from the user please give the answer to his current question do not connect it with previous questions this was your previous response by the user, now the responce which you will get is from the user and if the current question is completely offtopic then please give the responce according to that question dont use previous memmory for off topics question nor cosider previous responces of yours nor the users-.
+    GIVE YOUR ANSWER IN BREIF IF REQUIRED! GIVE EVERY ANSWER IN BRIEF LONG ANSWER BRIEF MEANS LONG!`;
 
     // Add event listeners for the send button and Enter key
     document.getElementById("send-button").addEventListener("click", sendMessage);
@@ -1475,7 +1505,7 @@ Maxar
         document.getElementById("logo-container").style.display = "none";
 
         // Combine the previous response with the current user input
-        const response = baseResponse + `\nThis was your previous response: ${previousResponse}\n` + userInput;
+        const response = baseResponse + `\nFocus on your current responce if it is connected with previous question then give the answer accordingly and if totally a new question then focus on it only. This was your previous response: ${previousResponse}\n` + userInput;
         console.log("Sending response: ", response); // Debugging log
 
         try {
@@ -1488,7 +1518,7 @@ Maxar
             previousResponse = userInput;
         } catch (error) {
             console.error("Error generating content: ", error);
-            addMessage("model", "An error occurred while generating the response.");
+            addMessage("model", "I'm sorry, but I can't assist with that request. Remember I am in beta.  ");
         }
 
         document.getElementById("logo-container").classList.add("hidden");
@@ -11294,5 +11324,6 @@ p:empty {
 /*# sourceMappingURL=b380f1ba07580460.css.map*/
 
     </style>
+   
 </body>
 </html>

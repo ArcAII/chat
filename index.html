@@ -405,6 +405,23 @@ h1 {
           
             // Run the formatting function every second
             setInterval(applyBoldFormatting, 1000);
+
+          function replaceBackticksWithCode(element) {
+  element.innerHTML = element.innerHTML.replace(/```(.*?)```/g, '<code>$1</code>');
+}
+
+function applyCodeFormatting() {
+  const messages = document.querySelectorAll('.message .text');
+  messages.forEach(message => {
+    if (!message.dataset.codeFormatted) {
+      replaceBackticksWithCode(message);
+      message.dataset.codeFormatted = 'true';
+    }
+  });
+}
+
+// Run the formatting function every second
+setInterval(applyCodeFormatting, 1000);
           </script>
         <script src="config.js"></script> <!-- Include config.js for API_KEY -->
         <script type="module">

@@ -405,7 +405,52 @@ h1 {
                 <button class="send-button" id="send-button">Send</button>
             </div>
         </div>
-        
+         <script>
+        // Define the prompts for each button
+        const buttonPrompts = {
+            'Create codes': 'Please help me create code for ',
+            'Analyze codes': 'Can you analyze this code: ',
+            'Code': 'Write code to ',
+            'Make a Plan': 'Help me make a plan for ',
+            'Summarize Text': 'Please summarize the following text: ',
+            'Analyze Data': 'Can you analyze this data: ',
+            'Surprise Me': 'Surprise me with something creative about ',
+            'Brainstorm': 'Let\'s brainstorm ideas for '
+        };
+
+        // Get DOM elements
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+        const toolbarButtons = document.querySelectorAll('.toolbar button');
+
+        // Add click handlers to toolbar buttons
+        toolbarButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                messageInput.value = buttonPrompts[button.textContent];
+                messageInput.focus();
+            });
+        });
+
+        // Handle sending messages
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                console.log('Sending message:', message);
+                // Here you would typically send the message to your backend
+                messageInput.value = '';
+            }
+        }
+
+        // Add click handler to send button
+        sendButton.addEventListener('click', sendMessage);
+
+        // Add enter key handler to input
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
         <script type="importmap">
             {
                 "imports": {

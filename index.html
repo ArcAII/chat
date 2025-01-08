@@ -432,24 +432,10 @@ h1 {
         });
 
         // Handle sending messages
-        function sendMessage() {
-            const message = messageInput.value.trim();
-            if (message) {
-                console.log('Sending message:', message);
-                // Here you would typically send the message to your backend
-                messageInput.value = '';
-            }
-        }
+      
 
         // Add click handler to send button
-        sendButton.addEventListener('click', sendMessage);
 
-        // Add enter key handler to input
-        messageInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
     </script>
         <script type="importmap">
             {
